@@ -55,7 +55,7 @@ nav li a {
 nav li:hover {
     background-color: #f8f8f8;
     border-radius: 6px;
-    transform: scale(1.1);
+    transform: scale(2);
     transition: background-color 0.3s, transform 0.3s;
 }
 nav li:hover a {
@@ -65,7 +65,7 @@ nav li:hover a {
   font-size: 21px;
 }
 .icon-header a:hover {
-    transform: scale(1);
+    transform: scale(1.1);
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -300,7 +300,6 @@ form{
 }
 #fb{
   padding-bottom: 20px;
- background-color: cornsilk;
 }
 
 
