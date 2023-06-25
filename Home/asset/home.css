@@ -8,17 +8,11 @@ html {
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: darkgray; */
-    /* background-color: #f59e9e; */
     background-color: white;
 
 }
 header {
-    /* background-color: #fde7e7; */
     background-color: #fadcf3;
-    /* background-color: #f9cee8; */
-    /* background-color: #f5b8d6; */
-    /* background-color: #f2a0c4; */
     width: 100%;
     position: fixed;
     top: 0;
@@ -35,9 +29,6 @@ header.sticky {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-#mainNavbar {
-    
-}
 .logo img {
     width: 90px;
     height: 60px;
@@ -83,7 +74,6 @@ nav li:hover a {
     font-weight: 500;
 }
 .carousel-caption .btn-caption:hover {
-  /* background-color: #f9cee8; */
   background-color: pink;
   color: white;
 }
@@ -96,15 +86,11 @@ nav li:hover a {
   font-weight: 500;
 }
 .carousel-caption .btn-caption-3:hover {
-/* background-color: #f9cee8; */
-background-color: #B0E0E6;
-color: white;
+  background-color: #B0E0E6;
+  color: white;
 }
 
-
-
 /* Slick */
-
 .slick-arrow {
     position: absolute;
     top: 50%;
@@ -122,10 +108,7 @@ color: white;
     height: 45px;
 }
 .slick-arrow:hover {
-    /* background-color: #2cccff; */
-    /* background-color: #fadcf3; */
     background-color: #f9cee8;
-    /* background-color: #f5b8d6; */
 }
 .slick-prev {
     left: 0;
@@ -180,11 +163,8 @@ color: white;
     font-weight: 600;
     color: #11111;
 }
-#sale {
-    /* background-color: #facfcf; */
-}
+
 .menu-item {
-    /* transition: all 1s ease-in-out; */
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);  
@@ -236,8 +216,8 @@ color: white;
 }
 
 /* best-selling */
-#best-selling {
-    margin: 80px 0;
+#best-selling{
+    margin: 80px 0px;
 }
 .title-best {
     text-align: center;
@@ -248,7 +228,7 @@ color: white;
 }
 
 /* feedbacks */
-#feedbacks {
+#feedbacks{
   margin-top: 100px;
   margin-bottom: 80px;
 }
@@ -273,11 +253,8 @@ color: white;
   }
 
   /*Contact  */
-#contact-us {
+#contact-us{
   background-color: azure;
-  /* background-color: #fde7e7; */
-  /* background-color: white; */
-  /* margin: 80px 0px; */
   padding: 80px 0px;
 }
 .title-contact {
@@ -290,7 +267,6 @@ color: white;
   height: 500px;
   display: flex;
   padding-top: 15px;
-  /* background-color: azure; */
 }
 form{
   display: block;
