@@ -6,4 +6,4 @@ Danh sách thành viên trong nhóm:
 - Nguyễn Duy Hoàng
 - Nguyễn Hữu An
   
-Hoàn thành giao diện thanh trang trủ Home
+Hoàn thành giao diện thanh trang chủ Home
