@@ -5,5 +5,10 @@ Danh sách thành viên trong nhóm:
 - Đinh Khắc Tùng
 - Nguyễn Duy Hoàng
 - Nguyễn Hữu An
+<<<<<<< HEAD:Home/README.md
 
 Hoàn thành giao diện thanh trang trủ Home
+=======
+  
+Hoàn thành giao diện thanh trang chủ Home
+>>>>>>> e6c4f33857b7bd73d3315bbb0e615ea97ac9b691:Home/Home/README.md
