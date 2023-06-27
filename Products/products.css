@@ -115,10 +115,10 @@ nav li:hover a {
 }
 @media (max-width: 1200px) {
   .btn-catalogies {
-    width: 110px;
+    width: 80px;
   }
 }
-@media (max-width: 1366px) {
+@media (min-width: 1201px) and (max-width: 1366px) {
   .btn-catalogies {
     width: 120px;
   }
