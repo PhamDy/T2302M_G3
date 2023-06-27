@@ -11,7 +11,6 @@ body {
     /* background-color: darkgray; */
     /* background-color: #f59e9e; */
     background-color: white;
-
 }
 header {
     /* background-color: #fde7e7; */
@@ -35,9 +34,6 @@ header.sticky {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-#mainNavbar {
-    
-}
 .logo img {
     width: 90px;
     height: 60px;
@@ -99,7 +95,6 @@ nav li:hover a {
 background-color: #B0E0E6;
 color: white;
 }
-
 
 
 /* Slick */
@@ -179,9 +174,7 @@ color: white;
     font-weight: 600;
     color: #11111;
 }
-#sale {
-    /* background-color: #facfcf; */
-}
+
 .menu-item {
     /* transition: all 1s ease-in-out; */
     border-radius: 10px;
@@ -213,6 +206,7 @@ color: white;
     background-color: #facfcf;
     transition: 0.1s ease-in-out;
     border: none;
+    color: white;
 }
 .menu-item .name-product {
     padding: 5px 0;
@@ -312,9 +306,6 @@ form{
 }
 .about-us h5 {
   margin-bottom: 32px;
-}
-.quick-links {
-  
 }
 .quick-links li {
   list-style-type: none;
