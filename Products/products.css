@@ -79,21 +79,23 @@ nav li:hover a {
 
 /* Catalogies */
 .filter {
-    padding-left: 70px;
+    padding-left: 40px;
 }
 .text-catalogies {
     margin-bottom: 15px;
 }
 .btn-catalogies {
     text-align: center;
-    width: 130px;
+    width: 140px;
     height: 50px;
     border: 1px solid pink;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+.btn-1 {
 }
 .btn-2 {
-    margin-left: 35px;
-    margin-bottom: 15px;
+    margin-left: 25px;
 }
 .btn-catalogies:hover {
   background-color: #f2a0c4;
@@ -111,6 +113,16 @@ nav li:hover a {
   background-color: #f2a0c4;
   color: white;
 }
+@media (max-width: 1200px) {
+  .btn-catalogies {
+    width: 110px;
+  }
+}
+@media (max-width: 1366px) {
+  .btn-catalogies {
+    width: 120px;
+  }
+}
 
 /* Products */
 .products {
@@ -126,8 +138,7 @@ nav li:hover a {
     height: 40%;
     margin-bottom: 60px;
     text-align: center;
-    margin-right: 70px;
-    
+    margin-right: 50px;    
 }
 .products-item .img-products {
     position: relative;
@@ -136,7 +147,7 @@ nav li:hover a {
     justify-content: center;
 }
 .products-item .img-products:hover .view-detals{
-    bottom: 50px;
+    bottom: 25px;
 }
 .products-item .img-products .view-detals:hover {
     color: black;
@@ -171,7 +182,7 @@ nav li:hover a {
     color: white;
     padding: 5px 0;
     position: absolute;
-    width: 60%;
+    width: 50%;
     bottom: -100px;
     border: 1px solid white;
     transition: 0.3s ease-in-out;
@@ -195,6 +206,10 @@ nav li:hover a {
   color: #11111;
   font-weight: 600;
 }
+.btn-cart {
+  display: flex;
+  justify-content: center;
+}
 .products-item .btn-add {
   border: 1px solid #555;
   background-color: #fff;
@@ -210,10 +225,21 @@ nav li:hover a {
   border: 1px solid #555;
   background-color: #fff;
   padding: 10px 10px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .products-item .btn-compare:hover {
 
+}
+@media (max-width: 1555px) {
+  .products-item .btn-add {
+    padding: 10px 5px ;
+    font-size: 10px; 
+  }
+
+  .products-item .btn-compare {
+    padding: 10px 5px;
+    font-size: 10px;
+  }
 }
 
 
@@ -289,3 +315,4 @@ nav li:hover a {
 #backtop:hover i {
   color: #fff;
 }
+
