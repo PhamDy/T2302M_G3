@@ -57,14 +57,30 @@ nav li:hover {
 nav li:hover a {
     text-decoration: dashed;
 }
+.icon-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.icon-header form {
+  width: 450px;
+  padding-left: 0px;
+  background-color: pink;
+}
 .icon-header a i {
   font-size: 21px;
 }
-.icon-header a:hover {
+.icon-header .icon-uc:hover {
     transform: scale(1.4);
     transition: background-color 0.3s, transform 0.3s;
 }
-
+.icon-header .icon-search {
+  background-color: white;
+}
+.icon-header .icon-uc {
+    padding-top: 5px;
+    padding-left: 20px;
+}
 /* Banner */
 #banner {
     margin-top: 106px;
