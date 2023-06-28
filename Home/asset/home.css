@@ -65,7 +65,12 @@ nav li:hover a {
 .icon-header form {
   width: 450px;
   padding-left: 0px;
-  background-color: pink;
+}
+.icon-header .input-group .form-control {
+    border-radius: 1.5rem;
+}
+.input-group .input-group-append {
+    border-right: 1.5rem; 
 }
 .icon-header a i {
   font-size: 21px;
@@ -75,7 +80,13 @@ nav li:hover a {
     transition: background-color 0.3s, transform 0.3s;
 }
 .icon-header .icon-search {
-  background-color: white;
+  border-radius: 1.5rem;
+  padding: 15px;
+  align-items: center;
+
+}
+.icon-header span {
+
 }
 .icon-header .icon-uc {
     padding-top: 5px;
