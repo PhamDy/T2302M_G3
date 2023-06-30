@@ -26,4 +26,19 @@ angular.module('myApp', [])
     $scope.matchBrand = function(product) {
       return $scope.filterBrand === '' || product.brand === $scope.filterBrand;
     };
+    // so sanh các san pham
+    $scope.compareProducts = [];
+    $scope.compareProduct = function(product) {
+      var index = $scope.compareProducts.indexOf(product);
+      if (index === -1) {
+        // Sản phẩm chưa tồn tại trong danh sách, thêm vào
+        $scope.compareProducts.push(product);
+      } else {
+        // Sản phẩm đã tồn tại trong danh sách, xóa ra khỏi danh sách
+        $scope.compareProducts.splice(index, 1);
+      }
+    };
+    
+
+
   });
