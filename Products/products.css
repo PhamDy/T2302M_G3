@@ -398,14 +398,37 @@ cursor: pointer;
 }
 
 /* Catalogies */
-.fade {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-.fade.ng-hide {
-  opacity: 0;
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+
 
 
 /* Back to Top */
