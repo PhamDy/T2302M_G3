@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: darkgray; */
+  /* background-color: #f59e9e; */
+  background-color: white;
+}
+header {
+  /* background-color: #fde7e7; */
+  background-color: #fadcf3;
+  /* background-color: #f9cee8; */
+  /* background-color: #f5b8d6; */
+  /* background-color: #f2a0c4; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 15px 0px;
+  transition: all 0.6s ease-in-out;
+  z-index: 1;
+}
+header.sticky {
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 5px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+  width: 90px;
+  height: 60px;
+}
+nav li a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 10px 18px;
+  font-weight: bold;
+  color: black;
+  display: block;
+}
+
+nav li:hover {
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+nav li:hover a {
+  text-decoration: dashed;
+}
+.icon-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.icon-header form {
+width: 450px;
+padding-left: 0px;
+}
+.icon-header .input-group .form-control {
+  border-radius: 1.5rem;
+}
+.input-group .input-group-append {
+  border-right: 1.5rem; 
+}
+.icon-header a i {
+font-size: 21px;
+}
+.icon-header .icon-uc:hover {
+  transform: scale(1.4);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.icon-header .icon-search {
+border-radius: 1.5rem;
+padding: 15px;
+cursor: pointer;
+}
+.icon-header .icon-uc {
+  padding-top: 5px;
+  padding-left: 20px;
+}
+div button.see-album {
+  position: absolute;
+  top: 70%;
+  left: 37%;
+  font-size: 24px;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+div button.see-album:hover {
+  transform: scale(1.1);
+}
+.rowsection2{
+  margin-left: 10%;
+  margin-bottom: 30px;
+}
+.dyn{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1%;
+}
+button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  width: 200px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .3s;
+ }
+ 
+ button:active,
+ button:hover {
+  outline: 0;
+ }
+ 
+ button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+ }
+ 
+ button:hover span {
+  background: none;
+ }
+ 
+ button:active {
+  transform: scale(0.9);
+ }
+
+/* Footer */
+.footer {
+  color: black;
+  background-color: #fde7e7;
+  /* background-color: #FADCF3; */
+}
+.row a{
+  color: black;
+}
+.row a:hover {
+  color: blue;
+  text-decoration: dashed ;
+}
+.about-us h5 {
+  margin-bottom: 32px;
+}
+.quick-links li {
+  list-style-type: none;
+  margin-bottom: 16px;
+}
+.quick-links h5 {
+  margin-bottom: 32px;
+}
+.social-network h5 {
+  margin-bottom: 32px;
+}
+.social-network p:hover {
+  color: blue;
+  cursor: pointer;
+}
+.social-network i {
+  padding-right: 5px;
+}
+.infomation h5 {
+  margin-bottom: 32px;
+}
+.infomation li {
+  list-style-type: none;
+  margin-bottom: 16px;
+}
+.infomation i {
+  padding-right: 6px;
+}
+
+/* Back to Top */
+#backtop {
+  width: 52px;
+  height: 52px;
+  background-color: #fadcf3;
+  color: fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+}
+#backtop:hover {
+  background-color: #f2a0c4;
+  transition: 0.2s ease-in-out;
+}
+#backtop i {
+  color: tomato;
+} 
+#backtop:hover i {
+  color: #fff;
+}
