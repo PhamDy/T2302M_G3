@@ -1,0 +1,102 @@
+/* feedbacks */
+.content-feedbacks {
+  background-color: hwb(8 50% 32% / 0.197);
+}
+#feedbacks-item {
+  width: 70%;
+  height: 250px;
+  padding-left: 100px;
+  margin-top: 10px;
+}
+
+/*Contact  */
+.contact{
+  height: 500px;
+  display: flex;
+  margin-top: 40px;
+  padding-top: 15px;
+  background-color: azure;
+}
+form{
+  display: block;
+  padding-left: 180px;
+  width: 630px;
+  text-align: left;  
+}
+#fb{
+  padding-bottom: 20px;
+ background-color: cornsilk;
+}
+/* .contact-info{
+  display: flex;
+}
+.info{
+  padding-left: 110px;
+  display: block;
+}
+h5 i{
+  padding-top: 40px;
+}
+i{
+  padding-right: 15px;
+} */
+
+/* Footer */
+.footer {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  background-color: white;
+  padding: 20px;
+  color: white;
+  padding-top: 20px;
+  height: 200px;
+  padding-left: 200px;
+  margin-left: -100px;
+}
+.infomation a{
+  text-decoration: none;
+  padding-top: 5px;
+}
+.infomation{
+  margin-left: -40px;
+}
+.infomation,.quick-links,.social-network {
+  margin-top: -15px;
+
+}
+/* .infomation,
+.social-network {
+  width: 45%;
+} */
+.infomation a,
+.social-network a {
+  display: block;
+}
+
+.social-network a{
+  padding-top: 30px;
+  margin-top: -10px;
+  margin-left: -110px;
+  text-decoration: none;
+  padding-left:100px;
+}
+.social-network{
+  margin-left: 120px;
+
+}
+a:hover i{
+  transform: scale(1.2);
+}
+i{
+  padding: 5px;
+}
+.quick-links{
+  display: flex;
+  flex-direction: column;
+  margin-left: -100px;
+  margin-right: -100px;
+}
+.quick-links a{
+  padding-top: 8px;
+  text-decoration: none;
+}

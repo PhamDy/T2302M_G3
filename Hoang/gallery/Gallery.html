@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" type="image/x-icon" href="./image/icon_web/2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" href="gallery.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <nav class="navbar navbar-expand-md navbar-dark">            
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
+                <div class="logo">
+                    <a href="#" class="">
+                        <img src="./logo.png" alt="" class="d-block">
+                    </a>
+                </div>
+                <ul class="navbar-nav">
+                    <li> 
+                        <a href="#">Home</a>
+                    </li>
+                    <li> 
+                        <a href="../Products/products.html">Products</a>
+                    </li>
+                    <li> 
+                        <a href="">Gallery</a>
+                    </li>
+                    <li> 
+                        <a href="">Features</a>
+                    </li>
+                    <li> 
+                        <a href="">About Us</a>
+                    </li>
+                    <li> 
+                        <a href="#contact-us">Contact</a>
+                    </li>
+                </ul>   
+                <div class="icon-header">
+                    <form action="">
+                        <div class="input-group" >
+                            <input type="text" class="form-control" placeholder="Search for anything" id="search" name="search">
+                            <div class="input-group-append">
+                              <span class="input-group-text icon-search "><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                </div>
+            </div>                  
+        </nav>
+    </header>  
+    <section class="row section">
+        <div style="margin-bottom: 30px;">
+            <div class="col-sm-12" >
+                <img src="./images/banner.jpg" alt="banner" width="100%" height="50%">
+                <button class="btn see-album"><a href="#" style="color: white;">See Album</a></button>
+            </div>
+        </div>
+        <div class="rowsection2">
+            <div class="d-flex">
+                <div class="col-sm-4 dyn">
+                <h1>Do you Know?</h1>
+                <p>Women always love receiving gifts, no matter what the occasion is. Whether
+                     it's a birthday, anniversary, or just a surprise present, it always brings a smile to their face.
+                      But why do women love gifts so much?</p>
+                <p>Firstly, it shows that someone has taken the time and effort to think about them and what they might like. 
+                        It's a way of showing appreciation and affection towards them. It also makes them feel special and valued.</p>
+                <p>Secondly, receiving gifts can be a form of self-care for women. It's a way of treating themselves and indulging
+                     in something they might not have bought for themselves otherwise. It can also be a way of relieving stress and improving their mood.</p>
+                <p>Lastly, gifts can create lasting memories. Every time they look at or use the gift, it reminds them of the person who gave it to them and the occasion it was given for. 
+                    It's a way of cherishing the moment and the relationship.
+                </p>
+                <p>In conclusion, giving gifts to women is always a good idea. It not only makes them happy but also strengthens the bond between two individuals.
+                     So, next time you want to make a woman feel special, surprise her with a thoughtful gift.Contact us if you need advise on a gift.</p>
+                     <button>
+                        <span class="text">Contact</span>
+                      </button>
+                </div>
+                <div class="col-sm-8">
+                    <img src="./images/girlsmile.jpg" alt="Girl-smile" width="90%">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex">
+                <div class="col-sm-4">
+                    <img src="./images/younggirl.jpg" alt="younggirl" width="100%">
+                    <h3>Gift for young girl</h3>
+                    <p>Inspire young girls with our carefully curated selection of gifts. From educational toys that foster creativity to empowering books that encourage self-discovery, each gift is chosen to nurture their passions and dreams. Let these thoughtful presents be a source of joy and empowerment for the extraordinary girls in your life.</p>
+                    <button>
+                            <span class="text">See Collection</span>
+                          </button>
+                </div>
+                <div class="col-sm-4">
+                    <img src="./images/women.jpg" alt="women" width="100%">
+                    <h3>Gift for Women</h3>
+                    <p>Celebrate the beauty and strength of women with our carefully selected gifts. From elegant jewelry that complements their style to luxurious self-care products that promote well-being, each gift is chosen to honor their uniqueness. Let these special presents convey your appreciation and love for the remarkable women in your life.</p>
+                    <button>
+                            <span class="text">See Collection</span>
+                          </button>
+                </div>
+                <div class="col-sm-4">
+                    <img src="./images/ElderlyWomen.jpg" alt="Elderly-women" width="100%">
+                    <h3>Gift for old women</h3>
+                    <p>Honor the wisdom and experiences of elderly women with our heartfelt gifts. From nostalgic keepsakes that evoke cherished memories to comforting self-care items that promote relaxation and well-being, each gift is chosen to bring joy and comfort. Let these meaningful presents express your love and gratitude to the extraordinary elderly women in your life.</p>
+                    <button>
+                            <span class="text">See Collection</span>
+                          </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-5">
+        <div class="container">
+            <div class="row">
+                <div class="about-us col-md-4">
+                    <h5 class="text-uppercase">About Us</h5>
+                    <p>Giftshop is a store specializing in providing unique and meaningful gift products for special occasions.
+                        We always prioritize customer satisfaction and are committed to providing quality products at reasonable prices.
+                        </p>
+                </div>
+                <!-- quick links -->
+                <div class="quick-links col-md-2">
+                    <h5 class="text-uppercase">Menu</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="#">HOME</a></li>
+                        <li class="nav-item"><a href="#">PRODUCTS</a></li>
+                        <li class="nav-item"><a href="#">GALLERY</a></li>
+                        <li class="nav-item"><a href="#">FEATURES</a></li>
+                    </ul> 
+                </div>
+                <div class="col-md-2">
+                    <div class="social-network">
+                        <h5 class="text-uppercase">Socials</h5>
+                        <p class="text-uppercase"><i class="fa-brands fa-facebook fa-xl"></i>Facebook</p>
+                        <p class="text-uppercase"><i class="fa-brands fa-twitter fa-xl"></i>Twitter</p>
+                        <p class="text-uppercase"><i class="fa-brands fa-instagram fa-xl"></i>Instagram</p>
+                        <p class="text-uppercase"><i class="fa-brands fa-youtube fa-xl"></i>Youtube</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="infomation">
+                        <h5 class="text-uppercase">Contact</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><i class="fa-regular fa-envelope"></i>GiftShop@fpt.edu.vn</li>
+                            <li class="nav-item"><i class="fa-solid fa-phone"></i>1900 1508</li>
+                            <li class="nav-item"><i class="fa-solid fa-building"></i>8A-Ton That Thuyet-My Dinh-Ha Noi</li>
+                            <li class="nav-item"><i class="fa-regular fa-clock"></i>8:00 - 18:00</li>
+                        </ul> 
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="backtop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script src="./Js/home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+</body>
+</html>
