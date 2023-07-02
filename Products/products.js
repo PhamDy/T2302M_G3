@@ -14,15 +14,19 @@ var cartCountElement = document.getElementById('cartCount');
 var cartCount = 0;
 
 // Lặp qua tất cả các nút "Add to cart"
-addToCartButtons.forEach(function(button) {
-  button.addEventListener('click', function() {
-    cartCount++;
-    cartCountElement.textContent = cartCount;
-  });
-});
+
 
   
   
+
+
+
+
+
+
+
+
+
   // Back to Top
   $(document).ready(function(){
     $(window).scroll(function(){

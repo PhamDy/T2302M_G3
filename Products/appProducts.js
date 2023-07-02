@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-  .controller('myController', function($scope, $http) {
+  .controller('myController', function($scope, $http, $window) {
     $http.get('products.json')
       .then(function(response) {
         $scope.products = response.data;
@@ -26,19 +26,28 @@ angular.module('myApp', [])
     $scope.matchBrand = function(product) {
       return $scope.filterBrand === '' || product.brand === $scope.filterBrand;
     };
-    // so sanh các san pham
-    $scope.compareProducts = [];
-    $scope.compareProduct = function(product) {
-      var index = $scope.compareProducts.indexOf(product);
-      if (index === -1) {
-        // Sản phẩm chưa tồn tại trong danh sách, thêm vào
-        $scope.compareProducts.push(product);
-      } else {
-        // Sản phẩm đã tồn tại trong danh sách, xóa ra khỏi danh sách
-        $scope.compareProducts.splice(index, 1);
+
+
+    // Add to cart
+    $scope.count = 0;
+    $scope.addToCart = function(product) {
+      var cart = {
+          "name": product.name,
+          "price": product.price,
+          "img": product.img1
       }
-    };
-    
+      // Chuyển đổi đối tượng thành chuỗi JSON và lưu trữ vào localStorage
+      $window.localStorage.setItem('cart', JSON.stringify(cart));
 
+      // Lấy chuỗi JSON từ localStorage và chuyển đổi thành đối tượng
+      var storedData = $window.localStorage.getItem('cart');
+      var cart = JSON.parse(storedData);
 
+      console.log(cart); 
+
+      if (cart !== null) {
+        $scope.count++;
+      } 
+      
+    }
   });

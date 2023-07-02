@@ -37,13 +37,10 @@
                     <a href="#">Products</a>
                 </li>
                 <li> 
-                    <a href="">Gallery</a>
+                    <a href="../gallery/Gallery.html">Gallery</a>
                 </li>
-                <!-- <li> 
-                    <a href="" >Blog</a>
-                </li> -->
                 <li> 
-                    <a href="">Features</a>
+                    <a href="../feature/feature.html">Features</a>
                 </li>
                 <li> 
                     <a href="">About Us</a>
@@ -62,7 +59,9 @@
                     </div>
                 </form>
                 <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
-                <a href="" class="icon-uc text-dark"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                <a href="" class="icon-uc text-dark" ><i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    <span ng-show="count > 0">{{ count }} </span>
+                </a>
             </div>
         </div>                  
     </nav>
@@ -112,8 +111,14 @@
                             <h6 class="name-product">{{ product.name }}</h6>
                             <h5 class="price">$ {{ product.price }}</h5>
                             <div class="btn-cart">
-                                <a href="" class="btn btn-sm btn-add"><span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart</a>                    
-                                <a href="" class="btn btn-sm btn-compare" ng-click="compareProduct(product)"><span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare</a>    
+                                <button class="btn btn-sm btn-add" ng-click="addToCart(product)" >
+                                   <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart                  
+                                </button>
+                                <button class="btn btn-sm btn-compare">
+                                    <span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare
+                                </button>
+                                <!-- <a href="" class="btn btn-sm btn-add" id="xyz"><span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart</a>                     -->
+                                <!-- <a href="" class="btn btn-sm btn-compare"><span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare</a>     -->
                             </div>                
                         </div>                       
                     </div>   
