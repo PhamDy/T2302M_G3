@@ -87,6 +87,7 @@ cursor: pointer;
 .icon-header .icon-uc {
   padding-top: 5px;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 /* Title */
@@ -227,6 +228,11 @@ cursor: pointer;
   color: #11111;
   font-weight: bold;
 }
+.products-item .price-sale {
+  text-decoration: line-through;
+  color: red;
+  font-weight: 400
+} 
 .products-item h5 {
   font-size: 18px;
   margin-top: 10px;
@@ -398,35 +404,86 @@ cursor: pointer;
 }
 
 /* Catalogies */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
+
+/* Show cart */
+.showcart {
+  position: fixed;
+  height: 100vh;
+  width: 480px;
+  top: 50%;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  border: none;
+  transform: translate(0, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 999;
+  transition: right 0.5s;
+}
+.showcart h2 {
+  font-weight: 500;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.showcart .icon-close {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.showcart table {
+  width: 100%;
+}
+.buy-amount input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ececec;
+  outline: none;
+}
+.showcart table tr td {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+#mycart .btn-delete {
+  border: none;
+  background: none;
+}
+#mycart .btn-delete:hover {
+  color: red;
+  transform: scale(1.2);
+  transition: 0.3s ease;
+}
+.price-total {
+  text-align: right;
+  padding: 10px 0px;
+}
+.btn-checkout {
+  border: 0.5px solid #ccc;
+  width: 400px;
+  height: 45px;
+  border-radius: 5px;
+  background: none;
+  font-weight: bold;
+}
+.btn-checkout:hover {
+  background-color: #fadcf3;
+  color: #fff;
+  border: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 998;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
-.fade-out {
-  animation: fadeOut 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-}
 
 
 

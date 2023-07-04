@@ -59,13 +59,48 @@
                     </div>
                 </form>
                 <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
-                <a href="" class="icon-uc text-dark" ><i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <a ng-click="showcart()" class="icon-uc text-dark" ><i class="fa-solid fa-cart-shopping fa-xl"></i>
                     <span ng-show="count > 0">{{ count }} </span>
                 </a>
             </div>
         </div>                  
     </nav>
 </header>  
+    <!-- Show cart -->
+    <section class="showcart" ng-show="showCart" >
+        <a ng-click="closeCart()">
+            <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
+        </a>
+        <h2>Your cart ({{ count }} items)</h2>
+        <table >
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub Total</th>
+                    <th>Action</th>                    
+                </tr>
+            </thead>
+            <tbody id="mycart" >
+                <tr ng-repeat="item in cartItems">
+                    <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
+                    <td>${{ item.price }}</td>
+                    <td class="buy-amount">
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td></td>
+                    <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="price-total">
+            <p style="font-weight: bold;">Total: $</p>
+        </div>
+        <button class="btn-checkout">Go to checkout</button>
+    </section>
+    <!-- <div class="overlay"  ng-click="closeCart()"></div> -->
 
     <!-- Title -->
     <section class="title container-fluid">
@@ -109,7 +144,7 @@
                                 <a href="" class="view-detals">View detals</a>
                             </div>
                             <h6 class="name-product">{{ product.name }}</h6>
-                            <h5 class="price">$ {{ product.price }}</h5>
+                            <h5 class="price">${{ product.price }}</h5>
                             <div class="btn-cart">
                                 <button class="btn btn-sm btn-add" ng-click="addToCart(product)" >
                                    <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart                  

@@ -109,23 +109,22 @@
     <!-- Sales -->
     <section id="sale">
         <h2 class="title-sale">sale off</h2>
-        <div class="container text-center bg-white">
-            <div class="row slider-products px-2">
+        <div class="container text-center bg-white" ng-repeat="product in products">
+            <div class="row slider-products px-2" >
                 <div class="col-md-11 menu-item">
                     <a href="">
-                        <!-- <img src="./image/stuffed_animal/1.png" alt="" class="img-item"> -->
-                        <img ng-src="{{ getProductById(3).img1  }}" alt="" class="img-item">
+                        <img ng-src="{{ product.img1  }}" alt="" class="img-item">
                     </a>
-                    <h6 class="name-product">{{ getProductById(3).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(3).price }}</span> $9.99</h5>
+                    <h6 class="name-product">{{ product.name }}</h6>
+                    <h5 class="price"><span class="price-sale">${{ product.price }}</span> {{ product.salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
                 </div>
-                <div class="col-md-11 menu-item">
+                <!-- <div class="col-md-11 menu-item">
                     <a href="">
                         <img ng-src="{{ getProductById(8).img1  }}" alt="" class="img-item">
                     </a>
                     <h6 class="name-product">{{ getProductById(8).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(8).price }}</span> $25.99</h5>
+                    <h5 class="price"><span class="price-sale">${{ getProductById(8).price }}</span> {{ getProductById(8).salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
                 </div>
                 <div class="col-md-11 menu-item">
@@ -133,7 +132,7 @@
                         <img ng-src="{{ getProductById(19).img1  }}" alt="" class="img-item">
                     </a>
                     <h6 class="name-product">{{ getProductById(19).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(19).price }}</span> $10.99</h5>
+                    <h5 class="price"><span class="price-sale">${{ getProductById(19).price }}</span> {{ getProductById(19).salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
                 </div>
                 <div class="col-md-11 menu-item">
@@ -141,7 +140,7 @@
                         <img ng-src="{{ getProductById(7).img1  }}" alt="" class="img-item">
                     </a>
                     <h6 class="name-product">{{ getProductById(7).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(7).price }}</span> $15.59</h5>
+                    <h5 class="price"><span class="price-sale">${{ getProductById(7).price }}</span> {{ getProductById(7).salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
                 </div>
                 <div class="col-md-11 menu-item">
@@ -149,7 +148,7 @@
                         <img ng-src="{{ getProductById(34).img1  }}" alt="" class="img-item">
                     </a>
                     <h6 class="name-product">{{ getProductById(34).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(34).price }}</span> $21.99</h5>
+                    <h5 class="price"><span class="price-sale">${{ getProductById(34).price }}</span> {{ getProductById(34).salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
                 </div>
                 <div class="col-md-11 menu-item">
@@ -157,9 +156,9 @@
                         <img ng-src="{{ getProductById(42).img1  }}" alt="" class="img-item">
                     </a>
                     <h6 class="name-product">{{ getProductById(42).name }}</h6>
-                    <h5 class="price"><span class="price-sale">${{ getProductById(42).price }}</span> $18.99</h5>
+                    <h5 class="price"><span class="price-sale">${{ getProductById(42).price }}</span> {{ getProductById(42).salePrice }}</h5>
                     <a href="" class="btn btn-sm btn-pink"><span><i class="fas fa-shopping-cart"></i></span> Buy now</a>                    
-                </div>
+                </div> -->
             </div>
         </div>
     </section>    
@@ -400,9 +399,9 @@
     </div>
 
     <!-- Script -->
-    
+
+    <script src="./home.js"></script>   
     <script src="./appHome.js"></script>
-    <script src="./home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 </body>
