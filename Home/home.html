@@ -59,8 +59,9 @@
                         </div>
                     </form>
                     <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
-                    <a href="" class="icon-uc text-dark" ><i class="fa-solid fa-cart-shopping fa-xl"></i>
-                        <span ng-show="count > 0">{{ count }} </span>
+                    <a ng-click="showcart()" class="icon-uc text-dark" >
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                        <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
                     </a>
                 </div>
             </div>                  
@@ -402,6 +403,7 @@
 
     <script src="./home.js"></script>   
     <script src="./appHome.js"></script>
+    <script src="../Products/appProducts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 </body>

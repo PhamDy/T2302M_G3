@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
-    <link rel="stylesheet" href="./products.css">
+    <link rel="stylesheet" href="./myStyle/products.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -34,7 +34,7 @@
                     <a href="../Home/home.html">Home</a>
                 </li>
                 <li> 
-                    <a href="#">Products</a>
+                    <a href="./products.html">Products</a>
                 </li>
                 <li> 
                     <a href="../gallery/Gallery.html">Gallery</a>
@@ -59,15 +59,16 @@
                     </div>
                 </form>
                 <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
-                <a ng-click="showcart()" class="icon-uc text-dark" ><i class="fa-solid fa-cart-shopping fa-xl"></i>
-                    <span ng-show="count > 0">{{ count }} </span>
+                <a ng-click="showcart()" class="icon-uc text-dark" >
+                    <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
                 </a>
             </div>
         </div>                  
     </nav>
 </header>  
     <!-- Show cart -->
-    <section class="showcart" ng-show="showCart" >
+    <section class="showcart" ng-class="{ 'active': showCart }">
         <a ng-click="closeCart()">
             <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
         </a>
@@ -87,20 +88,19 @@
                     <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
                     <td>${{ item.price }}</td>
                     <td class="buy-amount">
-                        <input type="number" value="1" min="1">
+                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity()">
                     </td>
-                    <td></td>
+                    <td>${{ calculateSubTotal(item) | number: 2 }}</td>
                     <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
                 </tr>
             </tbody>
         </table>
-        </div>
         <div class="price-total">
-            <p style="font-weight: bold;">Total: $</p>
+            <p style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
         </div>
-        <button class="btn-checkout">Go to checkout</button>
+        <a href="./viewCart.html"><button class="btn-checkout">View my cart</button></a>
     </section>
-    <!-- <div class="overlay"  ng-click="closeCart()"></div> -->
+    <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
 
     <!-- Title -->
     <section class="title container-fluid">

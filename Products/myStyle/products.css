@@ -88,8 +88,17 @@ cursor: pointer;
   padding-top: 5px;
   padding-left: 20px;
   cursor: pointer;
+  text-decoration: dashed;
 }
-
+.count-cart {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    padding: 4px 8px;
+    text-decoration: dashed;
+    border-radius: 10px;
+    color: red;
+}
 /* Title */
 .title {
     margin-top: 106px;
@@ -278,148 +287,42 @@ cursor: pointer;
   }
 }
 
-
-
-/* Footer */
-.footer {
-  color: black;
-  background-color: #fde7e7;
-  /* background-color: #FADCF3; */
-}
-.row a{
-  color: black;
-}
-.row a:hover {
-  color: blue;
-  text-decoration: dashed ;
-}
-.about-us h5 {
-  margin-bottom: 32px;
-}
-
-.quick-links li {
-  list-style-type: none;
-  margin-bottom: 16px;
-}
-
-.quick-links h5 {
-  margin-bottom: 32px;
-}
-.social-network h5 {
-  margin-bottom: 32px;
-}
-.social-network p:hover {
-  color: blue;
-  cursor: pointer;
-}
-.social-network i {
-  padding-right: 5px;
-}
-.infomation h5 {
-  margin-bottom: 32px;
-}
-.infomation li {
-  list-style-type: none;
-  margin-bottom: 16px;
-}
-.infomation i {
-  padding-right: 6px;
-}
-
-/* Back to Top */
-#backtop {
-  width: 52px;
-  height: 52px;
-  background-color: #fadcf3;
-  color: fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
-  cursor: pointer;
-}
-#backtop:hover {
-  background-color: #f2a0c4;
-  transition: 0.2s ease-in-out;
-}
-#backtop i {
-  color: tomato;
-} 
-#backtop:hover i {
-  color: #fff;
-}
-
-
-/* Footer */
-.footer {
-  color: black;
-  background-color: #fde7e7;
-  /* background-color: #FADCF3; */
-}
-.row a{
-  color: black;
-}
-.row a:hover {
-  color: blue;
-  text-decoration: dashed ;
-}
-.about-us h5 {
-  margin-bottom: 32px;
-}
-.quick-links {
-  
-}
-.quick-links li {
-  list-style-type: none;
-  margin-bottom: 16px;
-}
-.quick-links li a {
-  
-}
-.quick-links h5 {
-  margin-bottom: 32px;
-}
-.social-network h5 {
-  margin-bottom: 32px;
-}
-.social-network p:hover {
-  color: blue;
-  cursor: pointer;
-}
-.social-network i {
-  padding-right: 5px;
-}
-.infomation h5 {
-  margin-bottom: 32px;
-}
-.infomation li {
-  list-style-type: none;
-  margin-bottom: 16px;
-}
-.infomation i {
-  padding-right: 6px;
-}
-
-/* Catalogies */
-
 /* Show cart */
 .showcart {
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 480px;
   top: 50%;
-  right: 0;
+  right: -100%;
   margin: auto;
   text-align: center;
   border: none;
+  overflow-y: scroll;
   transform: translate(0, -50%);
   background-color: #fff;
   border-radius: 5px;
   z-index: 999;
-  transition: right 0.5s;
+
+}
+.showcart.active {
+  right: 0;
+  transition: right 0.5s ease-out;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 998;
+  transition: opacity 0.3s ease-in-out;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 .showcart h2 {
   font-weight: 500;
@@ -466,27 +369,61 @@ cursor: pointer;
   border-radius: 5px;
   background: none;
   font-weight: bold;
+  margin-bottom: 50px;
+  text-decoration: dashed;
 }
 .btn-checkout:hover {
   background-color: #fadcf3;
   color: #fff;
   border: none;
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 998;
-  transition: opacity 0.5s, visibility 0.5s;
+
+
+/* Footer */
+.footer {
+  color: black;
+  background-color: #fde7e7;
+  /* background-color: #FADCF3; */
+}
+.row a{
+  color: black;
+}
+.row a:hover {
+  color: blue;
+  text-decoration: dashed ;
+}
+.about-us h5 {
+  margin-bottom: 32px;
 }
 
+.quick-links li {
+  list-style-type: none;
+  margin-bottom: 16px;
+}
 
-
-
+.quick-links h5 {
+  margin-bottom: 32px;
+}
+.social-network h5 {
+  margin-bottom: 32px;
+}
+.social-network p:hover {
+  color: blue;
+  cursor: pointer;
+}
+.social-network i {
+  padding-right: 5px;
+}
+.infomation h5 {
+  margin-bottom: 32px;
+}
+.infomation li {
+  list-style-type: none;
+  margin-bottom: 16px;
+}
+.infomation i {
+  padding-right: 6px;
+}
 
 /* Back to Top */
 #backtop {
@@ -513,4 +450,3 @@ cursor: pointer;
 #backtop:hover i {
   color: #fff;
 }
-
