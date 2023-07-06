@@ -88,7 +88,7 @@
                     <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
                     <td>${{ item.price }}</td>
                     <td class="buy-amount">
-                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity()">
+                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
                     </td>
                     <td>${{ calculateSubTotal(item) | number: 2 }}</td>
                     <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
@@ -152,8 +152,6 @@
                                 <button class="btn btn-sm btn-compare">
                                     <span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare
                                 </button>
-                                <!-- <a href="" class="btn btn-sm btn-add" id="xyz"><span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart</a>                     -->
-                                <!-- <a href="" class="btn btn-sm btn-compare"><span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare</a>     -->
                             </div>                
                         </div>                       
                     </div>   

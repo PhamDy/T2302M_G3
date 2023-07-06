@@ -65,33 +65,69 @@
             </div>                  
         </nav>
     </header>  
-    <section class="table-myCart">        
-        <h2 class="title-myCart">My cart</h2>
-        <table >
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub Total</th>
-                    <th>Action</th>                    
-                </tr>
-            </thead>
-            <tbody id="mycart" >
-                <tr ng-repeat="item in cartItems">
-                    <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
-                    <td>${{ item.price }}</td>
-                    <td class="buy-amount">
-                        <input type="number" ng-model="item.quantity" min="1" ng-change="updateQuantity()">
-                    </td>
-                    <td>${{ calculateSubTotal(item) | number: 2 }}</td>
-                    <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="price-total">
-            <p style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+    <section class="container">
+        <div class="title-myCart row justify-content-center">
+            <div class="title-check col-md-8">
+                <div>
+                    <p class="number-cart1" style="color: white;">1</p>
+                    <p style="font-weight: bold;">CART</p>
+                </div>
+                <i class="fa-solid fa-angles-right fa-xl"></i>
+                <div>
+                    <p class="number-cart2" style="background-color: white; color: black; border: 1px solid pink;">2</p>
+                    <p>CHECKOUT</p>
+                </div>
+                <i class="fa-solid fa-angles-right fa-xl"></i>
+                <div>
+                    <p class="number-cart3">3</p>
+                    <p>COMPLETE</p>
+                </div>
+            </div>
         </div>
+    </section>
+    <section class="table-myCart">        
+        <div class="container">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sub Total</th>
+                        <th>Action</th>                    
+                    </tr>
+                </thead>
+                <tbody id="mycart" >
+                    <tr ng-repeat="item in cartItems">
+                        <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
+                        <td>{{ item.name }}</td>
+                        <td>${{ item.price }}</td>
+                        <td class="buy-amount">
+                            <input type="number" ng-model="item.quantity" min="1" ng-change="updateQuantity(item)">
+                        </td>
+                        <td>${{ calculateSubTotal(item) | number: 2 }}</td>
+                        <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-right">
+                <p>Cart Totals</p>
+                <hr>
+                <div class="total-item">
+                    <div>
+                        <p>Shipping</p>
+                        <p>Item(s) total</p>
+                    </div>
+                    <div>
+                        <p>1$</p>
+                        <p>2$</p>
+                    </div>
+                </div>
+                <hr>
+                <p style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+            </div>
+        </div>  
     </section>
 
     <!-- Footer -->

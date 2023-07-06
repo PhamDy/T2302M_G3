@@ -29,16 +29,17 @@ angular.module('myApp', [])
 
 
     // Add to cart
-    $scope.totalPrice = 0;
-    
     // Hàm tính subTotal
     $scope.calculateSubTotal = function(item) {
       return item.quantity * item.price;
     };
     // Hàm tính tổng giá trị
+    $scope.totalPrice = 0;
+    if (sessionStorage.getItem('totalPrice')) {
+      $scope.totalPrice = parseFloat(sessionStorage.getItem('totalPrice'));
+    }
     $scope.calculateTotalPrice = function() {
       $scope.totalPrice = 0;
-
       for (var i = 0; i < $scope.cartItems.length; i++) {
         var item = $scope.cartItems[i];
         if (item.quantity && item.price) {
@@ -46,6 +47,7 @@ angular.module('myApp', [])
           $scope.totalPrice += item.subTotal;
         }
       }
+      sessionStorage.setItem('totalPrice', $scope.totalPrice.toString());
     };
     
     // Thêm vào giỏ hàng
@@ -96,12 +98,21 @@ angular.module('myApp', [])
       }
       // Cập nhật số lượng
     $scope.count = $scope.cartItems.length;
-     $window.localStorage.setItem('cart', JSON.stringify($scope.cartItems));
-     $scope.calculateTotalPrice();
-     console.log($scope.totalPrice);
+    $scope.calculateTotalPrice();
+    console.log($scope.totalPrice);
+    sessionStorage.setItem('count',angular.toJson($scope.count))
+    sessionStorage.setItem('cartItems', angular.toJson($scope.cartItems));
     };
-    $scope.updateQuantity = function() {
+    // Update quantity
+    $scope.updateQuantity = function(item) {       
+        var index = $scope.cartItems.indexOf(item);
+      if (index !== -1) {
+        $scope.cartItems[index].quantity = item.quantity;
+        sessionStorage.setItem('cartItems', angular.toJson($scope.cartItems));
+        sessionStorage.setItem('quantity', item.quantity.toString());
+      }
       $scope.calculateTotalPrice();
+
     };
 
     

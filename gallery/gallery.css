@@ -19,7 +19,7 @@ header {
   /* background-color: #f5b8d6; */
   /* background-color: #f2a0c4; */
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   border-bottom: 1px solid #f5f5f5;
@@ -87,6 +87,11 @@ cursor: pointer;
 .icon-header .icon-uc {
   padding-top: 5px;
   padding-left: 20px;
+}
+
+/* Banner */
+.section {
+  margin-top: 106px;
 }
 div button.see-album {
   position: absolute;
