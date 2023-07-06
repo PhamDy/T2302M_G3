@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" type="image/x-icon" href="../Home/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" href="aboutUs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <nav class="navbar navbar-expand-md navbar-dark">            
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
+                <div class="logo">
+                    <a href="../Home/home.html" class="">
+                        <img src="../Home/logo.png" alt="" class="d-block">
+                    </a>
+                </div>
+                <ul class="navbar-nav">
+                    <li> 
+                        <a href="../Home/home.html">Home</a>
+                    </li>
+                    <li> 
+                        <a href="../Products/products.html">Products</a>
+                    </li>
+                    <li> 
+                        <a href="../gallery/Gallery.html">Gallery</a>
+                    </li>
+                    <li> 
+                        <a href="../feature/feature.html">Features</a>
+                    </li>
+                    <li> 
+                        <a href="../about-us/aboutUs.html">About Us</a>
+                    </li>
+                    <li> 
+                        <a href="#contact-us">Contact</a>
+                    </li>
+                </ul>   
+                <div class="icon-header">
+                    <form action="">
+                        <div class="input-group" >
+                            <input type="text" class="form-control" placeholder="Search for anything" id="search" name="search">
+                            <div class="input-group-append">
+                              <span class="input-group-text icon-search "><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
+                </div>
+            </div>                  
+        </nav>
+    </header>
+    <!-- section -->
+    <section>
+        <div class="container-fluid" style="margin: 80px auto;">
+            <div class="container sec1">
+                <div class="col-sm-6 text1">
+                    <h1 style="color: #4CAF50;">Welcome to GiftShop</h1>
+                    <span>We are delighted to welcome you to our gift shop. We offer unique and high-quality gift products to help 
+                    you find the perfect gift for your loved ones, friends, or business partners.</span>
+                </div>
+                <div class="col-sm-6 img">
+                    <img src="./images/giftshop.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid sec2">
+            <div class="col-sm-3" style="background-color: aquamarine;">
+                <h1>ABOUT US</h1>
+            </div>
+            <div class="col-sm-6 text2" style="background-color: azure;">
+                <h2>Our History</h2>
+                <span class="text-box">Gift Shop was founded in June 2023 by five members of the ABC team. Our mission was to create a unique gift shop that offers high-quality products and excellent customer service to our clients. <hr>
+                    From the beginning, we knew that having an online presence was essential to reach a wider audience. We used HTML, CSS, and JavaScript to develop our website, which allowed us to showcase our products and services to customers all over the world. <hr>
+                    Over the years, we have expanded our product range, added new features to our website, and improved our customer support. We are proud to have served thousands of happy customers and look forward to continuing to provide the best possible service for many years to come.</span>
+            </div>
+            <div class="col-sm-3" style="background-color: #b8fcfcc6;">
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-bottom: 80px;">
+            <div class="container sec3">
+                <div class="col-sm-6">
+                    <img src="./images/gift.jpg" alt="Gift" width="90%">
+                </div>
+                <div class="col-sm-6 text3">
+                    <h1 style="color: #4CAF50;;">Our Products</h1>
+                    <p>Our product at GiftShop is carefully curated to provide unique and thoughtful gifts for any occasion. 
+                        From personalized jewelry to handcrafted home decor, we offer a wide range of items that are perfect for expressing your love and appreciation to your loved ones.
+                         Our team of expert artisans and designers work tirelessly to create high-quality, one-of-a-kind products that are sure to impress.
+                          Whether you're looking for a birthday present, a wedding gift, or just something special to show you care,
+                           GiftShop has you covered. Shop our collection today and find the perfect gift for your loved ones!</p>
+                    <button class="cta">
+                            <a class="hover-underline-animation" href="../Products/products.html"> Shop now </a></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid sec4">
+            <div>
+                <h1>Our Operational Criteria</h1>
+            </div>
+            <div class="icon-container">
+                <div class="col-sm-3">
+                    <i class="fa-solid fa-user-shield fa-2xl"></i>
+                    <h3>Security</h3>
+                    <p>The store always ensures to keep customers' information confidential</p>
+                </div>
+                <div class="col-sm-3">
+                    <i class="fa-solid fa-hand-holding-dollar fa-2xl"></i>
+                    <h3>Good Price</h3>
+                    <p>The price of the product is always consistent with the quality of the product and the customer's ability to pay.</p>
+                </div>
+                <div  class="col-sm-3">
+                    <i class="fa-regular fa-lightbulb fa-2xl"></i>
+                    <h3>Creative</h3>
+                    <p>Stores can create unique, innovative products and make a difference from other stores.</p>
+                </div>
+                <div class="col-sm-3">
+                    <i class="fa-solid fa-thumbs-up fa-2xl"></i>
+                    <h3>Professionalism</h3>
+                    <p>The store has a professional and friendly staff to help customers find the right products and answer questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="about-us col-md-4">
+                        <h5 class="text-uppercase">About Us</h5>
+                        <p>Giftshop is a store specializing in providing unique and meaningful gift products for special occasions.
+                            We always prioritize customer satisfaction and are committed to providing quality products at reasonable prices.
+                            </p>
+                    </div>
+                    <!-- quick links -->
+                    <div class="quick-links col-md-2">
+                        <h5 class="text-uppercase">Menu</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="#">HOME</a></li>
+                            <li class="nav-item"><a href="#">PRODUCTS</a></li>
+                            <li class="nav-item"><a href="#">GALLERY</a></li>
+                            <li class="nav-item"><a href="#">FEATURES</a></li>
+                        </ul> 
+                    </div>
+                    <div class="col-md-2">
+                        <div class="social-network">
+                            <h5 class="text-uppercase">Socials</h5>
+                            <p class="text-uppercase"><i class="fa-brands fa-facebook fa-xl"></i>Facebook</p>
+                            <p class="text-uppercase"><i class="fa-brands fa-twitter fa-xl"></i>Twitter</p>
+                            <p class="text-uppercase"><i class="fa-brands fa-instagram fa-xl"></i>Instagram</p>
+                            <p class="text-uppercase"><i class="fa-brands fa-youtube fa-xl"></i>Youtube</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="infomation">
+                            <h5 class="text-uppercase">Contact</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><i class="fa-regular fa-envelope"></i>GiftShop@fpt.edu.vn</li>
+                                <li class="nav-item"><i class="fa-solid fa-phone"></i>1900 1508</li>
+                                <li class="nav-item"><i class="fa-solid fa-building"></i>8A-Ton That Thuyet-My Dinh-Ha Noi</li>
+                                <li class="nav-item"><i class="fa-regular fa-clock"></i>8:00 - 18:00</li>
+                            </ul> 
+                        </div>                
+                    </div>
+                </div>
+            </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <div id="backtop">
+            <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    
+    <!-- Script -->
+    <script src="../Home/home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+</body>
+</html>
