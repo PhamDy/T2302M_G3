@@ -95,10 +95,12 @@
                 </tr>
             </tbody>
         </table>
-        <div class="price-total">
-            <p style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+        <div class="choice-cart">
+            <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+            <a href="./checkout.html"><button class="btn-checkout">Go to checkout</button></a>
+            <a href="./viewCart.html"><button class="btn-mycart">View my cart</button></a>
         </div>
-        <a href="./viewCart.html"><button class="btn-checkout">View my cart</button></a>
+        
     </section>
     <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
 

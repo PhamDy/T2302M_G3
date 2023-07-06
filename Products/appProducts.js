@@ -112,9 +112,23 @@ angular.module('myApp', [])
         sessionStorage.setItem('quantity', item.quantity.toString());
       }
       $scope.calculateTotalPrice();
-
     };
 
+    $scope.shipping = 4.00;
+    $scope.total = $scope.shipping + $scope.totalPrice;
+    $scope.calculateTotal = function() {
+      $scope.total = $scope.shipping + $scope.totalPrice;
+    };
     
+    $scope.$watch('totalPrice', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        $scope.calculateTotal();
+        sessionStorage.setItem('total', $scope.total.toString());
+      }
+    });
    
+    $scope.placeOrder = function() {
+        alert('Order Success. Thank you for purchasing from us')
+    }
+
   });
