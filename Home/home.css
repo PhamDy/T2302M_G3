@@ -88,7 +88,15 @@ nav li:hover a {
     padding-top: 5px;
     padding-left: 20px;
 }
-
+.count-cart {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: white;
+  padding: 4px 8px;
+  text-decoration: dashed;
+  border-radius: 10px;
+  color: red;
+}
 /* Banner */
 #banner {
     margin-top: 106px;
