@@ -87,109 +87,99 @@
   .icon-header .icon-uc {
     padding-top: 5px;
     padding-left: 20px;
+    cursor: pointer;
+    text-decoration: dashed;
   }
-/* section */
-  .sec1{
-    display: flex;
-    margin: 0 auto;
-    font-size: 20px;
-  }
-  div div .img{
-    padding-left: 10%;
-  }
-  .text1{
-    margin-top: 5%;
-  }
-  .sec2{
-    display: flex;
-    background-color: #f5f5f5;
-    margin-bottom: 80px;
-  }
-  .text-box {
-    display: inline-block;
-    font-size: 16px;
-    width: 50%;
-    height: 400px;
-    word-wrap: break-word;
-    /* margin: 10% auto; */
-  }
-  .text2{
-    text-align: center;
-    padding: 10% auto;
-  }
-  .sec2 div h1{
-    text-align: center;
-    margin: 40% auto;
-    writing-mode: vertical-rl;
-    transform: rotate(-180deg);
-  }
-  .sec3{
-    display: flex;
-  }
-  .text3{
-    padding-top: 2%;
-    padding-left: 5%;
-  }
-  .sec4{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 20px;
-    height: 400px;
-    background-color: antiquewhite;
-  }
-  .sec4 div i{
-    font-size: 50px;
-  }
-  .icon-container{
-    display: flex;
-  }
-  .icon-container div i{
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
-  .cta {
-    border: none;
-    background: none;
-  }
-  .cta a {
-    padding-bottom: 7px;
-    letter-spacing: 4px;
-    font-size: 16px;
-    padding-right: 15px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  
-  .hover-underline-animation {
-    position: relative;
-    color: black;
-    padding-bottom: 20px;
-  }
-  
-  .hover-underline-animation:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .cta:hover .hover-underline-animation:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  .count-cart {
+      font-size: 15px;
+      font-weight: bold;
+      background-color: white;
+      padding: 4px 8px;
+      text-decoration: dashed;
+      border-radius: 10px;
+      color: red;
   }
 
-  /* Footer */
+/* Check out */
+.title-myCart {
+    margin-top: 106px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  .title-myCart .title-check {
+    display: flex;
+    padding: 80px 0px;
+    justify-content: space-between;
+  }
+  .title-myCart .title-check p {
+    margin-bottom: 10px;
+  }
+  .title-myCart .title-check .number-cart1 {
+    border: 1px solid pink;
+    padding: 26px 32px;
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+    color: black;
+  }
+  .title-myCart .title-check .number-cart2 {
+    border: 1px solid pink;
+    padding: 26px 32px;
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+    color: black;
+  }
+  .title-myCart .title-check .number-cart3 {
+    background-color: pink;
+    color: white;
+    padding: 26px 32px;
+    border-radius: 50%;
+    font-weight: bold;
+    width: 78px;
+    height: 78px;
+  }
+  .title-check i {
+    transform: translateY(30%);
+  }
+.CHECKOUT {
+    margin-bottom: 20px;
+}
+
+.btn-checkout {
+    border: none;
+    background-color: black;
+    color: #fff;
+    width: 320px;
+    height: 45px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: dashed;
+}
+.btn-checkout:hover {
+    border: none;
+    background-color: red;
+    transition: 0.3s ease-in-out;
+  }
+  .checkout {
+    padding: 15px;
+    background-color: #f4f6f8;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+    height: 20%;
+  }
+  .checkout p{
+    font-weight: bold;
+  }
+  .total-item {
+    display: flex;
+    justify-content: space-between;
+  }
+/* Footer */
 .footer {
     color: black;
     background-color: #fde7e7;
-    /* background-color: #FADCF3; */
   }
   .row a{
     color: black;
@@ -201,10 +191,12 @@
   .about-us h5 {
     margin-bottom: 32px;
   }
+  
   .quick-links li {
     list-style-type: none;
     margin-bottom: 16px;
   }
+  
   .quick-links h5 {
     margin-bottom: 32px;
   }
@@ -229,8 +221,10 @@
     padding-right: 6px;
   }
   
+
+
   /* Back to Top */
-  #backtop {
+#backtop {
     width: 52px;
     height: 52px;
     background-color: #fadcf3;
@@ -254,3 +248,5 @@
   #backtop:hover i {
     color: #fff;
   }
+  
+  

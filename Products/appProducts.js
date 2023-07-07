@@ -128,7 +128,51 @@ angular.module('myApp', [])
     });
    
     $scope.placeOrder = function() {
-        alert('Order Success. Thank you for purchasing from us')
+      alert('Order Success. Orders will be shipped in the next 1-2 days.')
     }
 
-  });
+    $scope.returnHome = function() {
+      alert('Thank you for your purchase, it is a pleasure to serve you')
+  }
+
+  // Compare
+    $scope.showChoice = false;
+    $scope.closechoice = function() {
+      $scope.showChoice = false; 
+    };
+
+  // Add products compare
+    $scope.productCompare = [];
+    $scope.compareCount = 0;
+    $scope.showchoice = function(product) {
+      $scope.showChoice = true;
+      var cart = {
+           "id": product.id,
+           "name": product.name,
+           "price": product.price,
+           "color": product.color,
+           "sold": product.sold,
+           "quantity": product.quantity,
+           "size": product.size,
+           "categories": product.categories,
+           "desc": product.desc,
+           "img": product.img1
+       };
+       if (cart !== null && $scope.compareCount < 3) {
+         $scope.productCompare.push(cart);
+         $scope.compareCount++;
+       }       
+       console.log($scope.productCompare)
+     }
+     // Delete products compare
+     $scope.deleteCompare = function(id) {
+      for (var i = 0; i < $scope.productCompare.length; i++) {
+        if ($scope.productCompare[i].id === id) {
+          $scope.productCompare.splice(i, 1);
+          $scope.compareCount--;
+          break; 
+        }
+      }
+     }
+     
+});

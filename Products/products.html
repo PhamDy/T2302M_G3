@@ -151,17 +151,38 @@
                                 <button class="btn btn-sm btn-add" ng-click="addToCart(product)" >
                                    <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart                  
                                 </button>
-                                <button class="btn btn-sm btn-compare">
+                                <button class="btn btn-sm btn-compare" ng-click="showchoice(product)">
                                     <span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare
                                 </button>
                             </div>                
-                        </div>                       
+                        </div>         
                     </div>   
                 </div>
             </div>
         </div>
     </section>
-    
+    <!-- Show choice compare -->
+    <section class="showchoice" ng-class="{ 'active': showChoice }">
+        <a ng-click="closechoice()">
+            <i class="icon-close fa-solid fa-xmark fa-xl"></i>
+        </a>
+        <h4 class="text-center">Added Products for Comparison</h4>
+        <div class="img-compare" >
+            <div class="img-compare-item" ng-repeat="choice in productCompare">
+                <img ng-src=" {{ choice.img }}" alt="">
+                <p style="font-weight: 600;"> {{ choice.name }}</p>
+                <button ng-click="deleteCompare(choice.id)"><i class="fa-solid fa-trash fa-xl"></i></button>
+            </div>
+        </div>
+        <div class="btn-compare-products">
+            <button>Compare Products</button>                    
+        </div>
+    </section>
+
+
+
+    <!-- Show compare -->
+
     <!-- Footer -->
     <footer class="footer p-5">
         <div class="container">
