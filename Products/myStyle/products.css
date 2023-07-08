@@ -393,6 +393,13 @@ cursor: pointer;
   color: #fff;
   border: none;
 }
+.btn-upDown {
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+}
 /* Show choice compare */
 .showchoice {
     position: fixed;
@@ -446,9 +453,13 @@ cursor: pointer;
   color: red;
 }
 .btn-compare-products {
+  position: relative;
   text-align: center;
 }
 .btn-compare-products button {
+  position: fixed;
+  left: 32%;
+  bottom: 7%;
   width: 200px;
   height: 40px;
   background-color: pink;
@@ -456,11 +467,78 @@ cursor: pointer;
   border: none;
   font-weight: bold;
   color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
 }
 .btn-compare-products button:hover {
   color: black;
 }
-
+/* Show table compare  */
+.maintablecompare a {
+  display: flex;
+  justify-content: end;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.maintablecompare {
+  background-color: white;
+  position: fixed;
+  top: -100%;
+  z-index: 32;
+  width: 1000px;
+  padding: 10px;
+  height: auto;
+  border-radius: 15px;
+}
+.maintablecompare.active2 {
+  top: 10%;
+  left: 25%;
+  right: 25%;
+  bottom: 19%;
+  transition: top 0.5s ease-out;
+}
+.tablecompare {
+  display: flex;
+}
+.tablecompare li {
+  list-style-type: none;
+}
+.tablecompare .main-li {
+    text-align: center;
+    padding-top: 10px;
+}
+.tablecompare .main-li .Feature {
+  display: flex;
+  justify-content: center;
+  transform: translateY(75px);
+}
+.main-li .Feature b {
+  display: block;
+  height: 150px;
+}
+.tablecompare .main-li li {
+  padding: 15px;
+}
+.tablecompare li img {
+  border-radius: 10px;
+  width: 150px;
+  height: auto;
+}
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 31;
+  transition: opacity 0.3s ease-in-out;
+}
+.overlay2.active2 {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* Footer */
 .footer {
   color: black;

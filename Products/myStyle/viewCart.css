@@ -209,6 +209,13 @@
   text-decoration: underline;
   font-weight: 600;
 }
+.btn-upDown {
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+}
 /* Footer */
 .footer {
     color: black;

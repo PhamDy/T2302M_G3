@@ -104,7 +104,9 @@
                         <td >{{ item.name }}</td>
                         <td>${{ item.price }}</td>
                         <td class="buy-amount">
-                            <input type="number" ng-model="item.quantity" min="1" ng-change="updateQuantity(item)">
+                            <button class="btn-upDown" ng-click="downquantity(item)">-</button>
+                            <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
+                            <button class="btn-upDown" ng-click="upquantity(item)">+</button>
                         </td>
                         <td>${{ calculateSubTotal(item) | number: 2 }}</td>
                         <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>

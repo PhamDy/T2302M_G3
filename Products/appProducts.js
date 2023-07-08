@@ -60,24 +60,42 @@ angular.module('myApp', [])
       $scope.count = angular.fromJson(sessionStorage.getItem('count'));
     }
     $scope.addToCart = function(product) {
-      var cart = {
+       
+      var existingProductIndex = $scope.cartItems.findIndex(function(item) {
+        return item.id === product.id;
+      });
+    
+      if (existingProductIndex !== -1) {
+        $scope.cartItems[existingProductIndex].quantity++;
+      } else {
+        var cart = {
           "id": product.id,
           "name": product.name,
           "price": product.price,
           "img": product.img1,
           "quantity": 1
-      };
-      if (cart !== null) {
+        };
         $scope.cartItems.push(cart);
         $scope.count = $scope.cartItems.length;
-      }       
+
+      }
       sessionStorage.setItem('cartItems',angular.toJson($scope.cartItems))
       sessionStorage.setItem('count',angular.toJson($scope.count))
       console.log($scope.cartItems)
       $scope.calculateTotalPrice();
       console.log($scope.totalPrice);
     }
-    
+    //
+    $scope.downquantity = function(item) {
+      if (item.quantity > 1) {
+        item.quantity--;
+        $scope.calculateTotalPrice();
+      }
+    }
+    $scope.upquantity = function(item) {
+      item.quantity++;
+      $scope.calculateTotalPrice();
+    }
     // Show cart
     $scope.showCart = false;
     $scope.showcart = function() {
@@ -155,13 +173,22 @@ angular.module('myApp', [])
            "quantity": product.quantity,
            "size": product.size,
            "categories": product.categories,
+           "brand": product.brand,
            "desc": product.desc,
            "img": product.img1
        };
-       if (cart !== null && $scope.compareCount < 3) {
-         $scope.productCompare.push(cart);
-         $scope.compareCount++;
-       }       
+        var existingProductIndex = $scope.productCompare.findIndex(function(item) {
+          return item.id === cart.id;
+        });
+
+        if (existingProductIndex !== -1) {
+          $scope.productCompare.splice(existingProductIndex, 1);
+          $scope.compareCount--;
+        } else if (cart !== null && $scope.compareCount < 3) {
+          $scope.productCompare.push(cart);
+          $scope.compareCount++;
+        }
+     
        console.log($scope.productCompare)
      }
      // Delete products compare
@@ -174,5 +201,16 @@ angular.module('myApp', [])
         }
       }
      }
-     
+  // Show table
+  $scope.showTable = false;
+  $scope.showtable = function() {
+    $scope.showTable = true;
+  }
+  $scope.closetablecompare = function() {
+    $scope.showTable = false;
+  }
+  // View details
+  
+
+
 });
