@@ -113,7 +113,7 @@ form.addEventListener('submit', function (e) {
 		checkEmail(email)
 		checkPasswordsMatch(password, password2)
 	}
-	// alert('register success!')
+	alert('register success!')
     registerUser(username.value, email.value, password.value);
 	
 });
@@ -121,20 +121,23 @@ form.addEventListener('submit', function (e) {
 
 
 // login form
-const login_Form = document.getElementById('login-form')
+const login_Form = document.getElementById('login-form');
 const user_Name = document.getElementById('user-name');
-const user_Password = document.getElementById('user-password')
+const user_Password = document.getElementById('user-password');
 // check account
 function loginUser(username, password) {
-	const storedUser = JSON.parse(localStorage.getItem('registeredUser'));
+	const storedUsers = JSON.parse(localStorage.getItem('registeredUsers'));
   
-	if (storedUser && storedUser.username === username && storedUser.password === password) {
-	  showSuccess(user_Password,'Login Success!You can back to home');
-
-	} else {
-	  showError(user_Password, 'username or password incorrect!');
+	if (storedUsers) {
+	  const foundUser = storedUsers.find(user => user.username === username && user.password === password);
+	  if (foundUser) {
+		showSuccess(user_Password, 'Login Success ! you can back to home !');
+	  } else {
+		showError(user_Password, 'User Name or Password is incorrect !');
+	  }
 	}
-  };
+  }
+  
 // Event listeners
 login_Form.addEventListener('submit',function(e){
 	e.preventDefault();
