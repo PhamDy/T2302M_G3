@@ -69,11 +69,14 @@
 </header>  
     <!-- Show cart -->
     <section class="showcart" ng-class="{ 'active': showCart }">
-        <a ng-click="closeCart()">
-            <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
-        </a>
-        <h2>Your cart ({{ count }} items)</h2>
-        <table >
+        <div>
+            <div class="title-mycart">
+            <a ng-click="closeCart()">
+                <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
+            </a>
+            <h2>Your cart ({{ count }} items)</h2>
+        </div>
+        <table>
             <thead>
                 <tr>
                     <th>Product</th>
@@ -88,17 +91,21 @@
                     <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
                     <td>${{ item.price }}</td>
                     <td class="buy-amount">
-                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity()">
+                        <button class="btn-upDown" ng-click="downquantity(item)">-</button>
+                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
+                        <button class="btn-upDown" ng-click="upquantity(item)">+</button>
                     </td>
                     <td>${{ calculateSubTotal(item) | number: 2 }}</td>
                     <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
                 </tr>
             </tbody>
         </table>
-        <div class="price-total">
-            <p style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+        <div class="choice-cart">
+            <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+            <a href="./checkout.html"><button class="btn-checkout">Go to checkout</button></a>
+            <a href="./viewCart.html"><button class="btn-mycart">View my cart</button></a>
         </div>
-        <a href="./viewCart.html"><button class="btn-checkout">View my cart</button></a>
+        </div>     
     </section>
     <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
 
@@ -149,19 +156,73 @@
                                 <button class="btn btn-sm btn-add" ng-click="addToCart(product)" >
                                    <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart                  
                                 </button>
-                                <button class="btn btn-sm btn-compare">
+                                <button class="btn btn-sm btn-compare" ng-click="showchoice(product)">
                                     <span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare
                                 </button>
-                                <!-- <a href="" class="btn btn-sm btn-add" id="xyz"><span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart</a>                     -->
-                                <!-- <a href="" class="btn btn-sm btn-compare"><span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare</a>     -->
                             </div>                
-                        </div>                       
+                        </div>         
                     </div>   
                 </div>
             </div>
         </div>
     </section>
-    
+    <!-- Show choice compare -->
+    <section class="showchoice" ng-class="{ 'active': showChoice }">
+        <a ng-click="closechoice()">
+            <i class="icon-close fa-solid fa-xmark fa-xl"></i>
+        </a>
+        <h4 class="text-center">Added Products for Comparison</h4>
+        <div class="img-compare" >
+            <div class="img-compare-item" ng-repeat="choice in productCompare">
+                <img ng-src=" {{ choice.img }}" alt="">
+                <p style="font-weight: 600;"> {{ choice.name }}</p>
+                <button ng-click="deleteCompare(choice.id)"><i class="fa-solid fa-trash fa-xl"></i></button>
+            </div>
+        </div>
+        <div class="btn-compare-products">
+            <button ng-click="showtable()">Compare Products</button>                    
+        </div>
+    </section>
+
+    <!-- Show table compare -->
+    <section class="maintablecompare" ng-class="{ 'active2': showTable }">
+        <a ng-click="closetablecompare()">
+            <i class="icon-close fa-solid fa-xmark fa-xl"></i>
+        </a>
+        <div class="container">
+            <div class="tablecompare row">
+                <div class="col-md-3">
+                    <ul class="main-li">
+                        <li class="Feature"><b>Feature</b></li>
+                        <li><b>Name</b></li>
+                        <li><b>Price</b></li>
+                        <li><b>Color</b></li>
+                        <li><b>Sold</b></li>
+                        <li><b>Quantity</b></li>
+                        <li><b>Size</b></li>
+                        <li><b>Categories</b></li>
+                        <li><b>Brand</b></li>
+                        <!-- <li><b>Desc</b></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-3" ng-repeat="choice in productCompare">
+                    <ul class="main-li">
+                        <li><img ng-src="{{ choice.img}}"></li>
+                        <li>{{ choice.name}}</li>
+                        <li>${{ choice.price}}</li>
+                        <li>{{ choice.color}}</li>
+                        <li>{{ choice.sold}}</li>
+                        <li>{{ choice.quantity}}</li>
+                        <li>{{ choice.size}}</li>
+                        <li>{{ choice.categories}}</li>
+                        <li>{{ choice.brand}}</li>
+                        <!-- <li>{{ choice.desc}}</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="overlay2" ng-class="{ 'active2': showTable }" ng-click="closetablecompare()"></div>
     <!-- Footer -->
     <footer class="footer p-5">
         <div class="container">

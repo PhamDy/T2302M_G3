@@ -88,6 +88,11 @@ cursor: pointer;
   padding-top: 5px;
   padding-left: 20px;
 }
+
+/* Banner */
+.section {
+  margin-top: 106px;
+}
 div button.see-album {
   position: absolute;
   top: 70%;
@@ -101,7 +106,6 @@ div button.see-album:hover {
   transform: scale(1.1);
 }
 .banner{
-  margin-top: 106px;
   margin-bottom: 80px;
 }
 .rowsection2{

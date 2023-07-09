@@ -16,16 +16,6 @@ var cartCount = 0;
 // Lặp qua tất cả các nút "Add to cart"
 
 
-  
-  
-
-
-
-
-
-
-
-
 
   // Back to Top
   $(document).ready(function(){

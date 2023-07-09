@@ -19,6 +19,7 @@ header {
   /* background-color: #f5b8d6; */
   /* background-color: #f2a0c4; */
   width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
   border-bottom: 1px solid #f5f5f5;
@@ -88,6 +89,13 @@ cursor: pointer;
   padding-left: 20px;
 }
 /* section */
+.feature-header {
+  margin-top: 106px;
+}
+.feature-header h1 {
+  padding: 70px 0px;
+  margin: 0;
+}
 section{
   margin: 0 auto;
 }
