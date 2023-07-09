@@ -1,5 +1,5 @@
-angular.module('myApp', ["ngRoute"])
-  .controller('myController', function($scope, $http, $window, $location, $routeParams) {
+angular.module('myApp', [])
+  .controller('myController', function($scope, $http, $window, $location) {
     $http.get('products.json')
       .then(function(response) {
         $scope.products = response.data;
@@ -215,18 +215,18 @@ angular.module('myApp', ["ngRoute"])
     $scope.showTable = false;
   }
   // Load ID
-  var productid = $routeParams.productid;
-    $scope.productDetails = null;
-    $scope.init = function() {
-        for (var i=0,len=$scope.products.length;i<len;i++) {
-        if ($scope.products[i].id === parseInt(productid)) {
-            $scope.productDetails = $scope.products[i];
-            break;
-        }
-    }
-  $scope.init();
+  // var productid = $routeParams.productid;
+  //   $scope.productDetails = null;
+  //   $scope.init = function() {
+  //       for (var i=0,len=$scope.products.length;i<len;i++) {
+  //       if ($scope.products[i].id === parseInt(productid)) {
+  //           $scope.productDetails = $scope.products[i];
+  //           break;
+  //       }
+  //   }
+  // $scope.init();
 
-  }
+  // }
 
 });
 
