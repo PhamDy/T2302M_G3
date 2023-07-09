@@ -1,5 +1,5 @@
-angular.module('myApp', [])
-  .controller('myController', function($scope, $http, $window) {
+angular.module('myApp', ["ngRoute"])
+  .controller('myController', function($scope, $http, $window, $location, $routeParams) {
     $http.get('products.json')
       .then(function(response) {
         $scope.products = response.data;
@@ -73,11 +73,16 @@ angular.module('myApp', [])
           "name": product.name,
           "price": product.price,
           "img": product.img1,
-          "quantity": 1
+          "quantity": 1,
+          "img1": product.img1,
+          "img2": product.img2,
+          "img3": product.img3,
+          "img4": product.img4,
+          "img5": product.img5,
+          "desc": product.desc
         };
         $scope.cartItems.push(cart);
         $scope.count = $scope.cartItems.length;
-
       }
       sessionStorage.setItem('cartItems',angular.toJson($scope.cartItems))
       sessionStorage.setItem('count',angular.toJson($scope.count))
@@ -85,7 +90,7 @@ angular.module('myApp', [])
       $scope.calculateTotalPrice();
       console.log($scope.totalPrice);
     }
-    //
+    // btn up down
     $scope.downquantity = function(item) {
       if (item.quantity > 1) {
         item.quantity--;
@@ -209,8 +214,19 @@ angular.module('myApp', [])
   $scope.closetablecompare = function() {
     $scope.showTable = false;
   }
-  // View details
-  
+  // Load ID
+  var productid = $routeParams.productid;
+    $scope.productDetails = null;
+    $scope.init = function() {
+        for (var i=0,len=$scope.products.length;i<len;i++) {
+        if ($scope.products[i].id === parseInt(productid)) {
+            $scope.productDetails = $scope.products[i];
+            break;
+        }
+    }
+  $scope.init();
 
+  }
 
 });
+
