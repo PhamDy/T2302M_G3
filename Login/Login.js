@@ -28,7 +28,7 @@ function checkEmail(input) {
 		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 	if (re.test(input.value.trim())) {
-		showSuccess(input)
+		showSuccess(input,'')
 	} else {
 		showError(input, 'Email is not valid')
 	}
@@ -45,7 +45,7 @@ function checkRequired(inputArr) {
 		showError(input, `${getFieldName(input)} is required`);
 		isRequired = true;
 	  } else {
-		showSuccess(input);
+		showSuccess(input,'');
 	  }
 	});
   
@@ -67,7 +67,7 @@ function checkLength(input, min, max) {
 			`${getFieldName(input)} must be less than ${max} characters`
 		)
 	} else {
-		showSuccess(input)
+		showSuccess(input,'')
 	}
 }
 
