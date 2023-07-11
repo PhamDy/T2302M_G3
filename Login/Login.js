@@ -28,7 +28,7 @@ function checkEmail(input) {
 		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 	if (re.test(input.value.trim())) {
-		showSuccess(input)
+		showSuccess(input,'')
 	} else {
 		showError(input, 'Email is not valid')
 	}
@@ -45,7 +45,7 @@ function checkRequired(inputArr) {
 		showError(input, `${getFieldName(input)} is required`);
 		isRequired = true;
 	  } else {
-		showSuccess(input);
+		showSuccess(input,'');
 	  }
 	});
   
@@ -67,7 +67,7 @@ function checkLength(input, min, max) {
 			`${getFieldName(input)} must be less than ${max} characters`
 		)
 	} else {
-		showSuccess(input)
+		showSuccess(input,'')
 	}
 }
 
@@ -115,7 +115,7 @@ form.addEventListener('submit', function (e) {
 	}
 	alert('register success!')
     registerUser(username.value, email.value, password.value);
-	
+	form.reset();
 });
 
 
@@ -131,7 +131,10 @@ function loginUser(username, password) {
 	if (storedUsers) {
 	  const foundUser = storedUsers.find(user => user.username === username && user.password === password);
 	  if (foundUser) {
-		showSuccess(user_Password, 'Login Success ! you can back to home !');
+		showSuccess(user_Password, 'Login Success ! Go to home page in 3 seconds !');
+		setTimeout(function(){
+			location.href = '../Home/home.html';
+		},3000);
 	  } else {
 		showError(user_Password, 'User Name or Password is incorrect !');
 	  }
