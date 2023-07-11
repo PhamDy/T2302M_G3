@@ -115,7 +115,7 @@
   .title-myCart .title-check p {
     margin-bottom: 10px;
   }
-  .title-myCart .title-check .number-cart1 {
+  .title-myCart .title-check .number-cart6 {
     border: 1px solid pink;
     padding: 26px 32px;
     border-radius: 50%;
@@ -123,7 +123,7 @@
     height: 78px;
     color: black;
   }
-  .title-myCart .title-check .number-cart2 {
+  .title-myCart .title-check .number-cart7 {
     border: 1px solid pink;
     padding: 26px 32px;
     border-radius: 50%;
@@ -131,7 +131,7 @@
     height: 78px;
     color: black;
   }
-  .title-myCart .title-check .number-cart3 {
+  .title-myCart .title-check .number-cart8 {
     background-color: pink;
     color: white;
     padding: 26px 32px;
@@ -147,7 +147,7 @@
     margin-bottom: 20px;
 }
 
-.btn-checkout {
+.btn-checkout1 {
     border: none;
     background-color: black;
     color: #fff;
@@ -157,7 +157,7 @@
     font-weight: bold;
     text-decoration: dashed;
 }
-.btn-checkout:hover {
+.btn-checkout1:hover {
     border: none;
     background-color: red;
     transition: 0.3s ease-in-out;

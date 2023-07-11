@@ -1,4 +1,4 @@
-<!-- Header -->
+
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">            
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
@@ -7,24 +7,24 @@
             <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
                 <div class="logo">
                     <a href="#" class="">
-                        <img src="./logo.png" alt="" class="d-block">
+                        <img src="/T2302M_G3/Products/logo.png" alt="" class="d-block">
                     </a>
                 </div>
                 <ul class="navbar-nav">
                     <li> 
-                        <a href="../Home/home.html">Home</a>
+                        <a href="/T2302M_G3/Home/home.html">Home</a>
                     </li>
                     <li> 
-                        <a href="./products.html">Products</a>
+                        <a href="/T2302M_G3/Products/products.html">Products</a>
                     </li>
                     <li> 
-                        <a href="../gallery/Gallery.html">Gallery</a>
+                        <a href="/T2302M_G3/Gallery/Gallery.html">Gallery</a>
                     </li>
                     <li> 
-                        <a href="../feature/feature.html">Features</a>
+                        <a href="/T2302M_G3/Feature/feature.html">Features</a>
                     </li>
                     <li> 
-                        <a href="">About Us</a>
+                        <a href="/T2302M_G3/about-us/aboutUs.html">About Us</a>
                     </li>
                     <li> 
                         <a href="#contact-us">Contact</a>
@@ -48,63 +48,43 @@
             </div>                  
         </nav>
     </header>  
+    <!-- Check out -->
     <section class="container">
         <div class="title-myCart row justify-content-center">
             <div class="title-check col-md-8">
                 <div>
-                    <p class="number-cart1" style="color: white;">1</p>
-                    <p style="font-weight: bold;">CART</p>
+                    <p class="number-cart6">1</p>
+                    <p style="font-weight: 600;">CART</p>
                 </div>
                 <i class="fa-solid fa-angles-right fa-xl"></i>
                 <div>
-                    <p class="number-cart2">2</p>
+                    <p class="number-cart7">2</p>
                     <p style="font-weight: 600;">CHECKOUT</p>
                 </div>
                 <i class="fa-solid fa-angles-right fa-xl"></i>
                 <div>
-                    <p class="number-cart3">3</p>
-                    <p style="font-weight: 600;">COMPLETE</p>
+                    <p class="number-cart8">3</p>
+                    <p style="font-weight: bold;">COMPLETE</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="table-myCart">        
-        <div class="container">
-            <table class="table text-center">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Sub Total</th>
-                        <th>Action</th>                    
-                    </tr>
-                </thead>
-                <tbody id="mycart" >
-                    <tr ng-repeat="item in cartItems">
-                        <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img }}" alt=""></td>
-                        <td >{{ item.name }}</td>
-                        <td>${{ item.price }}</td>
-                        <td class="buy-amount">
-                            <button class="btn-upDown" ng-click="downquantity(item)">-</button>
-                            <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
-                            <button class="btn-upDown" ng-click="upquantity(item)">+</button>
-                        </td>
-                        <td>${{ calculateSubTotal(item) | number: 2 }}</td>
-                        <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row justify-content-between">
-                <div class="col-md-5">
-                    <a href="./products.html" class="return">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Return to Products
-                    </a>
-                </div>
-                <div class="checkout col-md-5">
-                    <p class="text-uppercase">Cart Totals</p>
+
+    <section class="container mb-5">
+        <h2 class="CHECKOUT text-center">Order placed</h2>
+        <div class="row justify-content-center">
+            <div class="checkout col-md-4">
+               <div>
+                    <p class="text-uppercase">Order summary</p>
+                    <hr>
+                    <div class="total-item" ng-repeat="item in cartItems">
+                        <div>
+                            <p>{{ item.name }} <span style="color: red;">x</span> {{ item.quantity }} </p>
+                        </div>
+                        <div >
+                            <p>${{ calculateSubTotal(item) | number: 2 }}</p>
+                        </div>
+                    </div>
                     <hr>
                     <div class="total-item">
                         <div>
@@ -121,12 +101,11 @@
                         <p style="font-weight: bold;">Total </p>
                         <p style="color: red;">${{ total| number: 2 }}</p>
                     </div>
-                    <div class="text-center">
-                        <a href="#!checkout">
-                            <button class="btn-checkout" type="button">Proceed to Checkout</button>
-                        </a>
-                    </div>
-                </div>
+                    <a href="/T2302M_G3/Home/home.html" class="d-flex justify-content-center">
+                        <button type="submit" class="btn-checkout1" ng-click="returnHome()">Click here to return to the homepage</button>
+                    </a>
+               </div>
             </div>
-        </div>  
+            
+        </div>
     </section>

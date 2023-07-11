@@ -1,8 +1,14 @@
-angular.module('myApp', [])
-  .controller('myController', function($scope, $http, $window, $location) {
+app.controller('myController', function($scope, $http, $window, $routeParams) {
     $http.get('products.json')
       .then(function(response) {
         $scope.products = response.data;
+        $scope.id = $routeParams.id;
+        $scope.name = $routeParams.name;
+        $scope.productDetails = $scope.products.find(function(product) {
+            return product.id === parseInt($scope.id) && product.name === $scope.name;
+        });
+
+
       });
     
     // lọc sản phẩm theo Category và Brand
