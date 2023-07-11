@@ -115,7 +115,7 @@ form.addEventListener('submit', function (e) {
 	}
 	alert('register success!')
     registerUser(username.value, email.value, password.value);
-	
+	form.reset();
 });
 
 
@@ -131,7 +131,10 @@ function loginUser(username, password) {
 	if (storedUsers) {
 	  const foundUser = storedUsers.find(user => user.username === username && user.password === password);
 	  if (foundUser) {
-		showSuccess(user_Password, 'Login Success ! you can back to home !');
+		showSuccess(user_Password, 'Login Success ! Go to home page in 3 seconds !');
+		setTimeout(function(){
+			location.href = '../Home/home.html';
+		},3000);
 	  } else {
 		showError(user_Password, 'User Name or Password is incorrect !');
 	  }
