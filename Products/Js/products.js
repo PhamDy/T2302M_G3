@@ -13,8 +13,23 @@ var addToCartButtons = document.querySelectorAll('.btn-add');
 var cartCountElement = document.getElementById('cartCount');
 var cartCount = 0;
 
-// Lặp qua tất cả các nút "Add to cart"
+// Slick slider
+$(document).ready(function() {
+    $('.slider-products').slick({
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        isFinite: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        draggable: false,
+        prevArrow:"<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        dots: true
+       
 
+    });
+  });
 
 
   // Back to Top

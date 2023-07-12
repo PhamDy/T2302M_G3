@@ -1,4 +1,4 @@
-<!-- Header -->
+    <!-- Header -->
 <header>
     <nav class="navbar navbar-expand-md navbar-dark">            
         <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
@@ -39,57 +39,56 @@
                         </div>
                     </div>
                 </form>
+                <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
                 <a ng-click="showcart()" class="icon-uc text-dark" >
                     <i class="fa-solid fa-cart-shopping fa-xl"></i>
                     <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
                 </a>
-                <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
             </div>
         </div>                  
     </nav>
 </header>  
-    <!-- Show cart -->
-    <section class="showcart" ng-class="{ 'active': showCart }">
-        <div>
-            <div class="title-mycart">
-            <a ng-click="closeCart()">
-                <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
-            </a>
-            <h2>Your cart ({{ count }} items)</h2>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub Total</th>
-                    <th>Action</th>                    
-                </tr>
-            </thead>
-            <tbody id="mycart" >
-                <tr ng-repeat="item in cartItems">
-                    <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img1 }}" alt=""></td>
-                    <td>${{ item.price }}</td>
-                    <td class="buy-amount">
-                        <button class="btn-upDown" ng-click="downquantity(item)">-</button>
-                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
-                        <button class="btn-upDown" ng-click="upquantity(item)">+</button>
-                    </td>
-                    <td>${{ calculateSubTotal(item) | number: 2 }}</td>
-                    <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="choice-cart">
-            <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
-            <a href="#!checkout"><button class="btn-checkout">Go to checkout</button></a>
-            <a href="#!viewCart"><button class="btn-mycart">View my cart</button></a>
-        </div>
-        </div>     
-    </section>
-    <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
-
+   <!-- Show cart -->
+   <section class="showcart" ng-class="{ 'active': showCart }">
+    <div>
+        <div class="title-mycart">
+        <a ng-click="closeCart()">
+            <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
+        </a>
+        <h2>Your cart ({{ count }} items)</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub Total</th>
+                <th>Action</th>                    
+            </tr>
+        </thead>
+        <tbody id="mycart" >
+            <tr ng-repeat="item in cartItems">
+                <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img1 }}" alt=""></td>
+                <td>${{ item.price }}</td>
+                <td class="buy-amount">
+                    <button class="btn-upDown" ng-click="downquantity(item)">-</button>
+                    <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
+                    <button class="btn-upDown" ng-click="upquantity(item)">+</button>
+                </td>
+                <td>${{ calculateSubTotal(item) | number: 2 }}</td>
+                <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="choice-cart">
+        <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+        <a href="#!checkout"><button class="btn-checkout">Go to checkout</button></a>
+        <a href="#!viewCart"><button class="btn-mycart">View my cart</button></a>
+    </div>
+    </div>     
+</section>
+<div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
     <!-- Title -->
     <section class="title container-fluid">
         <h1 class="text-title">Products</h1>
@@ -101,22 +100,22 @@
                 <div class="filter col-sm-4 col-md-4 col-lg-3">
                     <h2 class="text-catalogies">Categories</h2>
                     <div class="catalogies">
-                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('All')">All</button>
-                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Snowball')">Snowball</button>
-                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Ornaments')">Ornaments</button>
-                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Clock')">Clock</button>
-                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Hourglass')">Hourglass</button>
-                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Picture Frame')">Picture frame</button>
-                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Mug')">Mugs</button>
-                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Stuffed Animal')">Stuffed animal</button>
+                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('All')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'All' && filterBrand === '' }">All</button>
+                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Snowball')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Snowball' }">Snowball</button>
+                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Ornaments')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Ornaments' }">Ornaments</button>
+                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Clock')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Clock' }">Clock</button>
+                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Hourglass')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Hourglass' }">Hourglass</button>
+                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Picture Frame')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Picture Frame' }">Picture frame</button>
+                        <button class="btn-catalogies btn-1" ng-click="filterByCategory('Mug')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Mug' }">Mugs</button>
+                        <button class="btn-catalogies btn-2" ng-click="filterByCategory('Stuffed Animal')" ng-class="{ 'btn-catalogies-mouse': filterCategory === 'Stuffed Animal' }">Stuffed animal</button>
                     </div>
                     <h2 class="text-brand">Brand</h2>
                     <div class="">
-                        <button class="btn-brand" ng-click="filterByBrand('Blissful')">Blissful</button>
-                        <button class="btn-brand" ng-click="filterByBrand('Surprz')">Surprz</button>
-                        <button class="btn-brand" ng-click="filterByBrand('Giftio')">Giftio</button>
-                        <button class="btn-brand" ng-click="filterByBrand('Happyx')">Happyx</button>
-                        <button class="btn-brand" ng-click="filterByBrand('Wondro')">Wondro</button>
+                        <button class="btn-brand" ng-click="filterByBrand('Blissful')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Blissful' }">Blissful</button>
+                        <button class="btn-brand" ng-click="filterByBrand('Surprz')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Surprz' }">Surprz</button>
+                        <button class="btn-brand" ng-click="filterByBrand('Giftio')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Giftio' }">Giftio</button>
+                        <button class="btn-brand" ng-click="filterByBrand('Happyx')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Happyx' }">Happyx</button>
+                        <button class="btn-brand" ng-click="filterByBrand('Wondro')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Wondro' }">Wondro</button>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9" style="padding: 0;">

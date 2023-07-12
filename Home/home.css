@@ -177,6 +177,7 @@ color: white;
     list-style-type: none;
     bottom: auto;
     gap: 0 10px;
+    margin-top: 10px;
 }
 
 .slick-dots button {
@@ -206,7 +207,9 @@ color: white;
     font-weight: 600;
     color: #11111;
 }
-
+#sale h5 {
+  margin-bottom: 20px;
+}
 .menu-item {
     /* transition: all 1s ease-in-out; */
     border-radius: 10px;

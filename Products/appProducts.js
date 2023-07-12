@@ -1,4 +1,39 @@
-app.controller('myController', function($scope, $http, $window, $routeParams) {
+app.directive('slickSlider', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      $(element).slick({
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        isFinite: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        draggable: false,
+        prevArrow:"<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              arrows: false,
+              isFinite: false
+            }
+          }           
+        ]
+      });
+    }
+  };
+})
+.controller('myController', function($scope, $http, $window, $routeParams) {
     $http.get('products.json')
       .then(function(response) {
         $scope.products = response.data;
@@ -7,14 +42,12 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
         $scope.productDetails = $scope.products.find(function(product) {
             return product.id === parseInt($scope.id) && product.name === $scope.name;
         });
-
-
       });
+
     
     // lọc sản phẩm theo Category và Brand
     $scope.filterCategory = 'All';
     $scope.filterBrand = '';
-
     $scope.filterByCategory = function(category) {
       $scope.filterCategory = category;
       $scope.filterBrand = '';
@@ -33,7 +66,20 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
       return $scope.filterBrand === '' || product.brand === $scope.filterBrand;
     };
 
+   // btn up down
+   $scope.downquantity = function(item) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      $scope.updateQuantity(item);
+      $scope.calculateTotalPrice();
+    }
+  }
+  $scope.upquantity = function(item) {
+    item.quantity++;
+    $scope.updateQuantity(item);
+    $scope.calculateTotalPrice();
 
+  }
     // Add to cart
     // Hàm tính subTotal
     $scope.calculateSubTotal = function(item) {
@@ -96,17 +142,8 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
       $scope.calculateTotalPrice();
       console.log($scope.totalPrice);
     }
-    // btn up down
-    $scope.downquantity = function(item) {
-      if (item.quantity > 1) {
-        item.quantity--;
-        $scope.calculateTotalPrice();
-      }
-    }
-    $scope.upquantity = function(item) {
-      item.quantity++;
-      $scope.calculateTotalPrice();
-    }
+ 
+
     // Show cart
     $scope.showCart = false;
     $scope.showcart = function() {
@@ -116,7 +153,7 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
     $scope.closeCart = function() {
       $scope.showCart = false; 
     };
-    
+   
     // Delete product
     $scope.delete = function(id) {
       for (var i = 0; i < $scope.cartItems.length; i++) {
@@ -136,7 +173,9 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
     $scope.updateQuantity = function(item) {       
         var index = $scope.cartItems.indexOf(item);
       if (index !== -1) {
-        $scope.cartItems[index].quantity = item.quantity;
+        var copyItem = angular.copy(item);
+        copyItem.quantity = item.quantity;
+        $scope.cartItems[index] = angular.extend({}, copyItem);
         sessionStorage.setItem('cartItems', angular.toJson($scope.cartItems));
         sessionStorage.setItem('quantity', item.quantity.toString());
       }
@@ -156,12 +195,8 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
       }
     });
    
-    $scope.placeOrder = function() {
-      alert('Order Success. Orders will be shipped in the next 1-2 days.')
-    }
-
     $scope.returnHome = function() {
-      alert('Thank you for your purchase, it is a pleasure to serve you')
+      alert('Thank you for your purchase, Orders will be shipped in the next 1-2 days.')
   }
 
   // Compare
@@ -220,19 +255,33 @@ app.controller('myController', function($scope, $http, $window, $routeParams) {
   $scope.closetablecompare = function() {
     $scope.showTable = false;
   }
-  // Load ID
-  // var productid = $routeParams.productid;
-  //   $scope.productDetails = null;
-  //   $scope.init = function() {
-  //       for (var i=0,len=$scope.products.length;i<len;i++) {
-  //       if ($scope.products[i].id === parseInt(productid)) {
-  //           $scope.productDetails = $scope.products[i];
-  //           break;
-  //       }
-  //   }
-  // $scope.init();
+  // change img
+  $scope.mainImgIndex = 1;
+  $scope.changeMainImg = function(index){
+    $scope.mainImgIndex = index;
+  }
+  $scope.prevImg = function() {
+      $scope.mainImgIndex--;  
+  }
+  $scope.nextImg = function() {
+      $scope.mainImgIndex++;
+  }
+  // Desc + review
+  $scope.desc = true;
+  $scope.review = false;
+  $scope.displayDesc = function() {
+    $scope.desc = true;
+    $scope.review = false;
+  }
+  $scope.displayReview = function() {
+    $scope.desc = false;
+    $scope.review = true;
+  }
 
-  // }
-
+});
+app.directive('slickSlider', function() {
+  return {
+    
+  };
 });
 

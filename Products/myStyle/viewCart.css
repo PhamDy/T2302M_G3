@@ -186,7 +186,7 @@
   display: flex;
   justify-content: space-between;
 }
-.btn-checkout {
+.btn-checkout1 {
   border: none;
   background-color: red;
   color: #fff;
@@ -196,7 +196,7 @@
   font-weight: bold;
   text-decoration: dashed;
 }
-.btn-checkout:hover {
+.btn-checkout1:hover {
   background: none;
   color: white;
   background-color: black;
