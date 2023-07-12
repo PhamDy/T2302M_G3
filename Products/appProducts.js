@@ -281,8 +281,19 @@ app.directive('slickSlider', function() {
     $scope.desc = false;
     $scope.review = true;
   }
-  // Cart Admin
-  
-
+  // infor customers
+  $scope.customers = [];
+  if (sessionStorage.getItem('customers')) {
+    $scope.customers = angular.fromJson(sessionStorage.getItem('customers'));
+  }
+  var uid = 1;
+  $scope.addCustomers = function() {
+    if ($scope.customer.id == null) {
+      $scope.customer.id = uid++;
+      $scope.customers.push($scope.customer)
+    }
+    console.log($scope.customers);
+    sessionStorage.setItem('customers',angular.toJson($scope.customers))
+  }
 });
 
