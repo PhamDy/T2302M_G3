@@ -131,10 +131,10 @@ function loginUser(username, password) {
 	if (storedUsers) {
 	  const foundUser = storedUsers.find(user => user.username === username && user.password === password);
 	  if (foundUser) {
-		showSuccess(user_Password, 'Login Success ! Go to home page in 3 seconds !');
+		showSuccess(user_Password, 'Login Success ! Go to home page in 1 seconds !');
 		setTimeout(function(){
-			location.href = '../Home/home.html';
-		},3000);
+			location.href = '/T2302M_G3/Products/index.html';
+		},1000);
 	  } else {
 		showError(user_Password, 'User Name or Password is incorrect !');
 	  }

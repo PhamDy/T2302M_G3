@@ -1,7 +1,7 @@
 var app = angular.module("myApp", ["ngRoute"])
 app.config(function ($routeProvider) {
     $routeProvider
-    .when("/", {
+    .when("/product", {
         templateUrl : "viewproducts.html",
         controller : "myController"
     })
@@ -19,6 +19,10 @@ app.config(function ($routeProvider) {
     })
     .when("/complete", {
         templateUrl : "./view/complete.html",
+        controller : "myController"
+    })
+    .when("/", {
+        templateUrl : "home.html",
         controller : "myController"
     })
     

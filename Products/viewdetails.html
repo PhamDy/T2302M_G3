@@ -12,10 +12,10 @@
                 </div>
                 <ul class="navbar-nav">
                     <li> 
-                        <a href="../Home/home.html">Home</a>
+                        <a href="#">Home</a>
                     </li>
                     <li> 
-                        <a href="../Products/products.html">Products</a>
+                        <a href="#!product">Products</a>
                     </li>
                     <li> 
                         <a href="../gallery/Gallery.html">Gallery</a>
@@ -94,8 +94,8 @@
     <section style="margin-top: 140px;">
         <div class="container">
             <nav class="nav-details-links">
-                <a href="../Home/home.html" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Home</a> / 
-                <a href="products.html" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Product</a> / 
+                <a href="#" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Home</a> / 
+                <a href="#!product" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Product</a> / 
                 <span>{{ productDetails.categories }}</span> 
                 <span>{{ productDetails.name }}</span>
             </nav>
@@ -161,7 +161,7 @@
                     <p class="text-desc"> {{ productDetails.desc }}</p>
                 </div>
                 <div class="form-review" ng-show="review">
-                    <form action="" style="width: 100%;">
+                    <form action="" style="width: 100%; padding-left: 0px;">
                         <h3>Be the first to review “Customized Rings”</h3>
                         <p style="margin: 16px 0px;">Your email address will not be published. Required fields are marked *</p>
                         <div class="form-group">

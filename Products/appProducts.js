@@ -44,7 +44,12 @@ app.directive('slickSlider', function() {
         });
       });
 
-    
+    // img ID
+    $scope.filterByIds = function(ids) {
+      return function(product) {
+        return ids.indexOf(product.id) !== -1;
+      };
+    };
     // lọc sản phẩm theo Category và Brand
     $scope.filterCategory = 'All';
     $scope.filterBrand = '';
@@ -142,7 +147,6 @@ app.directive('slickSlider', function() {
       $scope.calculateTotalPrice();
       console.log($scope.totalPrice);
     }
- 
 
     // Show cart
     $scope.showCart = false;
@@ -277,11 +281,8 @@ app.directive('slickSlider', function() {
     $scope.desc = false;
     $scope.review = true;
   }
+  // Cart Admin
+  
 
-});
-app.directive('slickSlider', function() {
-  return {
-    
-  };
 });
 
