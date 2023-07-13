@@ -133,7 +133,7 @@ function loginUser(username, password) {
 	  if (foundUser) {
 		showSuccess(user_Password, 'Login Success ! Go to home page in 1 seconds !');
 		setTimeout(function(){
-			location.href = '/T2302M_G3/index.html"';
+			location.href = '/T2302M_G3/index.html';
 		},1000);
 	  } else {
 		showError(user_Password, 'User Name or Password is incorrect !');

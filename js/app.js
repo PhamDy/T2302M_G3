@@ -24,6 +24,15 @@ app.config(function ($routeProvider) {
     .when("/login", {
         templateUrl : "./src/login.html"
     })
+    .when("/gallery", {
+        templateUrl : "./src/gallery.html"
+    })
+    .when("/feature", {
+        templateUrl : "./src/feature.html"
+    })
+    .when("/aboutUs", {
+        templateUrl : "./src/aboutUs.html"
+    })
     .when("/", {
         templateUrl : "./src/home.html",
         controller : "myController"
