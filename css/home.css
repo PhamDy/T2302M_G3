@@ -75,6 +75,13 @@ nav li:hover a {
 .icon-header a i {
   font-size: 21px;
 }
+.icon-header .icon-uc {
+  padding-top: 5px;
+  padding-left: 20px;
+}
+.icon-header .icon-uc i {
+  cursor: pointer;
+}
 .icon-header .icon-uc:hover {
     transform: scale(1.4);
     transition: background-color 0.3s, transform 0.3s;
@@ -84,11 +91,13 @@ nav li:hover a {
   padding: 15px;
   cursor: pointer;
 }
-.icon-header .icon-uc {
-    padding-top: 5px;
-    padding-left: 20px;
-}
 .count-cart {
+  position: relative;
+}
+.count-cart .count-cart-sup {
+  position: absolute;
+  top: -36px;
+  right: -28px;
   font-size: 15px;
   font-weight: bold;
   background-color: white;
@@ -96,6 +105,7 @@ nav li:hover a {
   text-decoration: dashed;
   border-radius: 10px;
   color: red;
+  z-index: 100000;
 }
 /* Banner */
 #banner {

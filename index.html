@@ -66,7 +66,9 @@
                     <a href="./src/login.html" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
                     <a ng-click="showcart()" class="icon-uc text-dark" >
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>
-                        <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
+                        <div class="count-cart">
+                            <sup class="count-cart-sup" ng-show="count > 0">{{ count }} </sup>
+                        </div>
                     </a>
                 </div>
             </div>                  
