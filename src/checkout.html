@@ -1,0 +1,178 @@
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">            
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
+                <div class="logo">
+                    <a href="#" class="">
+                        <img src="/T2302M_G3/image/logo.png" alt="" class="d-block">
+                    </a>
+                </div>
+                <ul class="navbar-nav">
+                    <li> 
+                        <a href="/T2302M_G3/index.html">Home</a>
+                    </li>
+                    <li> 
+                        <a href="!#product">Products</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/gallery.html">Gallery</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/feature.html">Features</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/aboutUs.html">About Us</a>
+                    </li>
+                    <li> 
+                        <a href="#contact-us">Contact</a>
+                    </li>
+                </ul>   
+                <div class="icon-header">
+                    <form action="">
+                        <div class="input-group" >
+                            <input type="text" class="form-control" ng-model="search.name" placeholder="Search for anything" id="search" name="search">
+                            <div class="input-group-append">
+                              <span class="input-group-text icon-search "><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
+                    <a ng-click="showcart()" class="icon-uc text-dark" >
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                        <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
+                    </a>
+                </div>
+            </div>                  
+        </nav>
+    </header>  
+  
+      
+    <!-- Check out -->
+    <section class="container">
+        <div class="title-myCart row justify-content-center">
+            <div class="title-check col-md-8">
+                <div>
+                    <p class="number-cart4">1</p>
+                    <p style="font-weight: 600;">CART</p>
+                </div>
+                <i class="fa-solid fa-angles-right fa-xl"></i>
+                <div>
+                    <p class="number-cart5">2</p>
+                    <p style="font-weight: bold;">CHECKOUT</p>
+                </div>
+                <i class="fa-solid fa-angles-right fa-xl"></i>
+                <div>
+                    <p class="number-cart6">3</p>
+                    <p style="font-weight: 600;">COMPLETE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="CHECKOUT2">Billing details</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <form action="#!complete" class="information" style="width: 100%; padding-left: 0px;" name="myForm">
+                    <div class="form-group">
+                        <input type="hidden" ng-model="customer.id">
+                    </div>
+                    <div class="form-group row" style="margin-top: 23px;">
+                        <div class="col">
+                            <label for="firstname">First name:</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Enter first name" name="firstname" ng-model="customer.firstname" ng-class="{'is-invalid': myForm.firstname.$invalid && !myForm.firstname.$pristine}" required>                           
+                        </div>
+                        <div class="col">
+                            <label for="lastname">Last name:</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Enter last name" name="lastname" ng-model="customer.lastname" ng-class="{'is-invalid': myForm.lastname.$invalid && !myForm.lastname.$pristine}" required>
+                        </div>
+                    </div>
+                      <div class="form-group" style="margin-top: 23px;">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" ng-model="customer.email" ng-class="{'is-invalid': myForm.email.$invalid && !myForm.email.$pristine}" required>
+                      </div>
+                      <div class="form-group" style="margin-top: 23px;">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" placeholder="Enter address" id="address" name="address" ng-model="customer.address" ng-class="{'is-invalid': myForm.address.$invalid && !myForm.address.$pristine}" requireds>
+                    </div>
+                      <div class="form-group row" style="margin-top: 23px;">
+                        <div class="col">
+                            <label for="country">Country/Region:</label>
+                            <input type="text" class="form-control" id="country" placeholder="Usa, Viet nam..." name="country" ng-model="customer.country" ng-class="{'is-invalid': myForm.country.$invalid && !myForm.country.$pristine}" required>
+                        </div>
+                        <div class="col">
+                            <label for="city">City:</label>
+                            <input type="text" class="form-control" id="city" placeholder="New york, Ha noi..." name="city" ng-model="customer.city" ng-class="{'is-invalid': myForm.city.$invalid && !myForm.city.$pristine}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 23px;">
+                        <div class="col">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" id="state" placeholder="California..." name="state" ng-model="customer.state" ng-class="{'is-invalid': myForm.state.$invalid && !myForm.state.$pristine}" required>
+                        </div>
+                        <div class="col">
+                            <label for="zipcode">ZIP Code:</label>
+                            <input type="text" class="form-control" id="zipcode" placeholder="20001" name="zipcode" ng-model="customer.zipcode" ng-class="{'is-invalid': myForm.zipcode.$invalid && !myForm.zipcode.$pristine}" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 23px;">
+                        <label for="phone">Phone number:</label>
+                        <input type="text" class="form-control" placeholder="Enter phone number" id="phone" name="phone" ng-model="customer.phone" ng-class="{'is-invalid': myForm.phone.$invalid && !myForm.phone.$pristine}" requireds>
+                    </div>
+                    <div class="form-group" style="margin-top: 23px;">
+                        <label for="note">Note:</label>
+                        <textarea class="form-control" id="note" name="note" rows="5" cols="5" ng-model="customer.note"></textarea>
+                    </div>            
+                    <div class="d-flex justify-content-end" style="margin-top: 23px;">
+                        <button type="submit" class="btn-checkout2" ng-click="addCustomers()" ng-disabled="myForm.firstname.$invalid && myForm.firstname.$pristine || 
+                                myForm.lastname.$invalid && myForm.lastname.$pristine || myForm.email.$invalid && myForm.email.$pristine ||
+                                myForm.address.$invalid && myForm.address.$pristine || myForm.country.$invalid && myForm.country.$pristine ||
+                                myForm.city.$invalid && myForm.city.$pristine || myForm.state.$invalid && myForm.state.$pristine ||
+                                myForm.zipcode.$invalid && myForm.zipcode.$pristine || myForm.phone.$invalid && myForm.phone.$pristine ">
+                            Place Order
+                        </button>
+                    </div>    
+                </form>
+                <div class="btn-order">
+                    <a href="#!viewCart" class="return">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Return to Cart
+                    </a>
+                </div>
+            </div>
+            <div class="checkout1 col-md-4">
+               <div >
+                    <p class="text-uppercase">Order summary</p>
+                    <hr>
+                    <div class="total-item" ng-repeat="item in cartItems">
+                        <div>
+                            <p>{{ item.name }} <span style="color: red;">x</span> {{ item.quantity }} </p>
+                        </div>
+                        <div >
+                            <p>${{ calculateSubTotal(item) | number: 2 }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="total-item">
+                        <div>
+                            <p>Item(s) total</p>
+                            <p>Shipping</p>
+                        </div>
+                        <div >
+                            <p>${{ totalPrice | number: 2 }}</p>
+                            <p>${{ shipping | number: 2 }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="total-item">
+                        <p style="font-weight: bold;">Total </p>
+                        <p style="color: red;">${{ total| number: 2 }}</p>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+

@@ -1,0 +1,245 @@
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">            
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
+                <div class="logo">
+                    <a href="#" class="">
+                        <img src="/T2302M_G3/image/logo.png" alt="" class="d-block">
+                    </a>
+                </div>
+                <ul class="navbar-nav">
+                    <li> 
+                        <a href="#">Home</a>
+                    </li>
+                    <li> 
+                        <a href="#!product">Products</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/gallery.html">Gallery</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/feature.html">Features</a>
+                    </li>
+                    <li> 
+                        <a href="/T2302M_G3/src/aboutUs.html">About Us</a>
+                    </li>
+                    <li> 
+                        <a href="#contact-us">Contact</a>
+                    </li>
+                </ul>   
+                <div class="icon-header">
+                    <form action="">
+                        <div class="input-group" >
+                            <input type="text" class="form-control" ng-model="search.name" placeholder="Search for anything" id="search" name="search">
+                            <div class="input-group-append">
+                              <span class="input-group-text icon-search "><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
+                    <a ng-click="showcart()" class="icon-uc text-dark" >
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                        <sup class="count-cart" ng-show="count > 0">{{ count }} </sup>
+                    </a>
+                </div>
+            </div>                  
+        </nav>
+    </header>  
+       <!-- Show cart -->
+       <section class="showcart" ng-class="{ 'active': showCart }">
+        <div>
+            <div class="title-mycart">
+            <a ng-click="closeCart()">
+                <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
+            </a>
+            <h2>Your cart ({{ count }} items)</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub Total</th>
+                    <th>Action</th>                    
+                </tr>
+            </thead>
+            <tbody id="mycart" >
+                <tr ng-repeat="item in cartItems">
+                    <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img1 }}" alt=""></td>
+                    <td>${{ item.price }}</td>
+                    <td class="buy-amount">
+                        <button class="btn-upDown" ng-click="downquantity(item)">-</button>
+                        <input type="number" ng-model="item.quantity" min="1" ng-change="updateQuantity(item)">
+                        <button class="btn-upDown" ng-click="upquantity(item)">+</button>
+                    </td>
+                    <td>${{ calculateSubTotal(item) | number: 2 }}</td>
+                    <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="choice-cart">
+            <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
+            <a href="#!checkout"><button class="btn-checkout">Go to checkout</button></a>
+            <a href="#!viewCart"><button class="btn-mycart">View my cart</button></a>
+        </div>
+        </div>     
+    </section>
+    <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
+
+    <!-- product details -->
+    <section style="margin-top: 140px;">
+        <div class="container">
+            <nav class="nav-details-links">
+                <a href="#" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Home</a> / 
+                <a href="#!product" style="font-weight: bold; text-decoration: underline; color: black; text-underline-offset: 5px;">Product</a> / 
+                <span>{{ productDetails.categories }}</span> 
+                <span>{{ productDetails.name }}</span>
+            </nav>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-details">
+                        <button class="img-details-prev" ng-click="prevImg()" ng-disabled="mainImgIndex === 1"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="img-details-next" ng-click="nextImg()" ng-disabled="mainImgIndex === 5"><i class="fa-solid fa-chevron-right"></i></button>
+                        <img ng-src="{{ productDetails.img1 }}" ng-if="mainImgIndex === 1">
+                        <img ng-src="{{ productDetails.img2 }}" ng-if="mainImgIndex === 2">
+                        <img ng-src="{{ productDetails.img3 }}" ng-if="mainImgIndex === 3">
+                        <img ng-src="{{ productDetails.img4 }}" ng-if="mainImgIndex === 4">
+                        <img ng-src="{{ productDetails.img5 }}" ng-if="mainImgIndex === 5">
+                    </div>
+                    <div class="img-details-items">
+                        <img ng-src="{{ productDetails.img1 }}"  ng-click="changeMainImg(1)" ng-class="{ 'selected-img': mainImgIndex === 1 }">
+                        <img ng-src="{{ productDetails.img2 }}"  ng-click="changeMainImg(2)" ng-class="{ 'selected-img': mainImgIndex === 2 }">
+                        <img ng-src="{{ productDetails.img3 }}"  ng-click="changeMainImg(3)" ng-class="{ 'selected-img': mainImgIndex === 3 }">
+                        <img ng-src="{{ productDetails.img4 }}"  ng-click="changeMainImg(4)" ng-class="{ 'selected-img': mainImgIndex === 4 }">
+                        <img ng-src="{{ productDetails.img5 }}"  ng-click="changeMainImg(5)" ng-class="{ 'selected-img': mainImgIndex === 5 }">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product-details">
+                        <h1 style="margin-bottom: 24px;">{{ productDetails.name }}</h1>
+                        <h5 style="margin: 0;">${{ productDetails.price }}</h5>
+                        <p class="note">Welcome to our Gift Shop, where every item tells a story. 
+                            Explore our collection of unique and thoughtfully curated gifts that are sure to make any occasion extra special. 
+                            From handcrafted treasures to personalized keepsakes, 
+                            each product is carefully chosen to bring joy and create lasting memories.
+                            Discover the perfect gift that captures the essence of your heartfelt message. Shop with us and experience the joy of giving.
+                        </p>
+                        <hr>
+                            <p><b>Availability:</b> <span style="color: red;">In Stock</span></p>
+                                <div style="margin-bottom: 8px;">            
+                                    <button class="btn-add-details" ng-click="addToCart(productDetails)">
+                                    <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart
+                                    </button>
+                                </div>            
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p><b>Categories:</b> <span>{{ productDetails.categories }}</span></p>
+                            <p><b>Color:</b> <span>{{ productDetails.color }}</span></p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p><b>Brand:</b> <span>{{ productDetails.brand }}</span></p>
+                            <p><b>Size:</b> <span>{{ productDetails.size }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div >
+                <div class="details-desc">
+                    <button ng-click="displayDesc()" ng-class="{ 'buttonDesc': desc }">
+                        Description
+                    </button>
+                    <button ng-click="displayReview()" ng-class="{ 'buttonDesc': review }">
+                        Reviews (0)
+                    </button>
+                </div>
+                <hr>
+                <div class="content-desc" ng-show="desc">
+                    <p class="text-desc"> {{ productDetails.desc }}</p>
+                </div>
+                <div class="form-review" ng-show="review">
+                    <form action="" style="width: 100%; padding-left: 0px;">
+                        <h3>Be the first to review “Customized Rings”</h3>
+                        <p style="margin: 16px 0px;">Your email address will not be published. Required fields are marked *</p>
+                        <div class="form-group">
+                            <label for="review">Your review *</label>
+                            <textarea style="height: 180px;" class="form-control" id="review"  rows="5" cols="5"></textarea>
+                        </div>  
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" name="remember"> Save my name, email, and website in this browser for the next time I comment.
+                            </label>
+                          </div>
+                          <button type="submit" class="btn-review">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>  
+    <!-- sale upcoming -->
+    <!-- 3, 8, 19, 7, 34, 42 -->
+    <section id="sale" style="padding-top: 100px;">
+        <h2 class="title-sale">sale off upcoming</h2>
+        <div class="container text-center bg-white">
+            <div class="row slider-products px-2" slick-slider>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/3.png" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Multiple Animals</h6>
+                    <h5 class="price"><span class="price-sale">$15.15</span> $?.99</h5>
+                </div>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/8.jpg" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Round hourglass</h6>
+                    <h5 class="price"><span class="price-sale">$49.99</span> $?5.99</h5>
+                </div>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/19.jpg" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Pig mug</h6>
+                    <h5 class="price"><span class="price-sale">$19.99</span> $?0.99</h5>
+                </div>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/34.jpg" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Horse snowball</h6>
+                    <h5 class="price"><span class="price-sale">$41.99</span> $?1.99</h5>
+                </div>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/7.png" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Unicorn</h6>
+                    <h5 class="price"><span class="price-sale">$21.59</span> $?1.59</h5>
+                </div>
+                <div class="col-md-11 menu-item">
+                    <a href="">
+                        <img src="/T2302M_G3/image/sale/42.jpg" alt="" class="img-item">
+                    </a>
+                    <h6 class="name-product">Duck hat Clock</h6>
+                    <h5 class="price"><span class="price-sale">$22.98</span> $?8.99</h5>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    
+
+
+
