@@ -85,3 +85,70 @@
  #gallery .rowsection4 div p{
   padding-top: 13px;
  }
+
+
+@media (max-width: 767px) {
+  #gallery {
+    overflow-x: hidden;
+  }
+  #gallery p {
+    font-size: 14px;
+  }
+  #gallery .banner div {
+    padding: 0;
+  }
+  .dyn{
+    padding-left: 0;
+    padding-right: 50px;
+    margin-top: -50px;
+  }
+
+  #gallery div button.see-album {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #gallery div div button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 30px;
+  }
+
+  #gallery .img2 {
+    display: none;
+  }
+  #gallery .rowsection4 div div img{
+    display: none;
+  }
+  #gallery .rowsection4 div div div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #gallery .rowsection4 .img4{
+    width: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  #gallery {
+    overflow-x: hidden;
+  }
+  #gallery .banner div {
+    padding: 0;
+  }
+  #gallery .dyn{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 0px;
+    padding-right: 90px;
+  }
+  #gallery .img2 {
+    display: none;
+  }
+  #gallery div div button{
+    margin-bottom: 30px;
+  }
+}
