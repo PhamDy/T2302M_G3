@@ -394,11 +394,13 @@
   padding: 10px;
   height: 700px;
   border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .maintablecompare.active2 {
   top: 5%;
-  left: 15%;
-  right: 15%;
+  /* left: 15%; */
+  /* right: 15%; */
   bottom: 19%;
   transition: top 0.5s ease-out;
 }
