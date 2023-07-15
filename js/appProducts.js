@@ -295,5 +295,6 @@ app.directive('slickSlider', function() {
     console.log($scope.customers);
     sessionStorage.setItem('customers',angular.toJson($scope.customers))
   }
+  $scope.admin = 'asd';
 });
 
