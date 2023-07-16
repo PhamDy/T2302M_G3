@@ -161,7 +161,7 @@ app.directive('slickSlider', function() {
     };
    
     // Delete product
-    $scope.delete = function(id) {
+    $scope.deleteCartItems = function(id) {
       for (var i = 0; i < $scope.cartItems.length; i++) {
         if ($scope.cartItems[i].id === id) {
           $scope.cartItems.splice(i, 1);
