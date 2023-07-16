@@ -27,10 +27,8 @@
 <body ng-app="myApp">
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark">            
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- nav pc -->
+        <nav class="navbar navbar-expand-md navbar-dark nav-pc">   
             <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
                 <div class="logo">
                     <a href="#" class="">
@@ -75,6 +73,40 @@
                     </a>
                 </div>
             </div>                  
+        </nav>
+        <label for="nav-mobile-input" class="nav-btn"><i class="fa-solid fa-bars"></i></label>
+
+        <input type="checkbox" hidden class="nav-input" id="nav-mobile-input">
+
+        <label for="nav-mobile-input" class="nav-overlay"></label>
+
+        <nav class="nav-mobile">
+            <label for="nav-mobile-input" class="nav-close"><i class="fa-regular fa-circle-xmark"></i></label>
+                <div class="logo">
+                    <a href="#">
+                        <img src="./image/logo.png" alt="" class="nav-logo">
+                    </a>
+                </div>
+                <ul class="navbar-nav">
+                    <li> 
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li> 
+                        <a href="#!product" class="nav-link">Products</a>
+                    </li>
+                    <li> 
+                        <a href="#!gallery" class="nav-link">Gallery</a>
+                    </li>
+                    <li> 
+                        <a href="#!feature" class="nav-link">Features</a>
+                    </li>
+                    <li> 
+                        <a href="#!aboutUs" class="nav-link">About Us</a>
+                    </li>
+                    <li> 
+                        <a href="#contact-us" class="nav-link">Contact</a>
+                    </li>
+                </ul>   
         </nav>
     </header>  
     <!-- Show cart  -->

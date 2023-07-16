@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </form>
-                <a href="/T2302M_G3/Login/Login.html" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
+                <a href="/Login/Login.html" class="icon-uc text-dark"><i class="fa-solid fa-user fa-xl"></i></a>
                 <a ng-click="showcart()" class="icon-uc text-dark" >
                     <i class="fa-solid fa-cart-shopping fa-xl"></i>
                     <div class="count-cart">
@@ -120,7 +120,7 @@
                         <button class="btn-brand" ng-click="filterByBrand('Wondro')" ng-class="{ 'btn-catalogies-mouse': filterBrand  === 'Wondro' }">Wondro</button>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9" style="padding: 0;">
+                <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-9" style="padding: 0;">
                     <div class="products">
                         <div class="products-item" ng-repeat="product in products | filter:search" 
                             ng-if="matchCategory(product) && matchBrand(product)">
@@ -138,10 +138,10 @@
                             <h5 class="price">${{ product.price }}</h5>
                             <div class="btn-cart">
                                 <button class="btn btn-sm btn-add" ng-click="addToCart(product)" >
-                                   <span><i class="fas fa-shopping-cart fa-xl"></i></span> Add to cart                  
+                                    <i class="fas fa-shopping-cart fa-xl"></i><span>Add to cart </span>                
                                 </button>
                                 <button class="btn btn-sm btn-compare" ng-click="showchoice(product)">
-                                    <span><i class="fa-solid fa-circle-plus fa-xl"></i></span> Compare
+                                    <i class="fa-solid fa-circle-plus fa-xl"></i><span>Compare</span>
                                 </button>
                             </div>                
                         </div>         
