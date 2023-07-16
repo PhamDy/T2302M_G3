@@ -37,5 +37,4 @@ app.config(function ($routeProvider) {
         templateUrl : "./src/home.html",
         controller : "myController"
     })
-    
 });

@@ -68,7 +68,7 @@
                     <a ng-click="showcart()" class="icon-uc text-dark" >
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>
                         <div class="count-cart">
-                            <sup class="count-cart-sup" ng-show="count > 0">{{ count }} </sup>
+                            <p class="count-cart-sup" ng-show="count > 0">{{ count }} </p>
                         </div>
                     </a>
                 </div>
@@ -109,47 +109,6 @@
                 </ul>   
         </nav>
     </header>  
-    <!-- Show cart  -->
-    <section class="showcart" ng-class="{ 'active': showCart }">
-        <div>
-            <div class="title-mycart">
-            <a ng-click="closeCart()">
-                <i class="icon-close fa-solid fa-xmark fa-2xl"></i>
-            </a>
-            <h2>Your cart ({{ count }} items)</h2>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub Total</th>
-                    <th>Action</th>                    
-                </tr>
-            </thead>
-            <tbody id="mycart" >
-                <tr ng-repeat="item in cartItems">
-                    <td><img style="width: 100px; border-radius: 10px;" ng-src="{{ item.img1 }}" alt=""></td>
-                    <td>${{ item.price }}</td>
-                    <td class="buy-amount">
-                        <button class="btn-upDown" ng-click="downquantity(item)">-</button>
-                        <input type="number"  ng-model="item.quantity"  min="1" ng-change="updateQuantity(item)">
-                        <button class="btn-upDown" ng-click="upquantity(item)">+</button>
-                    </td>
-                    <td>${{ calculateSubTotal(item) | number: 2 }}</td>
-                    <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="choice-cart">
-            <p class="price-total" style="font-weight: bold;">Total: ${{ totalPrice | number: 2 }}</p>
-            <a href="#!checkout"><button class="btn-checkout">Go to checkout</button></a>
-            <a href="#!viewCart"><button class="btn-mycart">View my cart</button></a>
-        </div>
-        </div>     
-    </section>
-    <div class="overlay" ng-class="{ 'active': showCart }" ng-click="closeCart()"></div>
     <!-- Content -->
 
    <div ng-view></div>

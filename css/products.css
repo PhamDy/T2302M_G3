@@ -395,23 +395,23 @@ padding: 15px 10px;
 cursor: pointer;
 }
 .maintablecompare {
-background-color: white;
-position: fixed;
-top: -100%;
-z-index: 32;
-width: 1000px;
-padding: 10px;
-height: 700px;
-border-radius: 15px;
-left: 50%;
-transform: translateX(-50%);
+  background-color: white;
+  position: fixed;
+  top: -100%;
+  z-index: 32;
+  width: 1000px;
+  padding: 10px;
+  height: 700px;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .maintablecompare.active2 {
-top: 5%;
-/* left: 15%; */
-/* right: 15%; */
-bottom: 19%;
-transition: top 0.5s ease-out;
+  top: 5%;
+  /* left: 15%; */
+  /* right: 15%; */
+  bottom: 19%;
+  transition: top 0.5s ease-out;
 }
 .tablecompare {
 display: flex;
