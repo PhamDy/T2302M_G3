@@ -63,13 +63,24 @@ header.sticky {
     transform: translateX(-100%);
     opacity: 0;
     transition: transform linear 0.2s,opacity linear 0.2s;
+    z-index: 5;
   }
   .nav-logo{
-    margin-top: 20px;
-    margin-left: 10px;
+    /* margin-top: 20px;
+    margin-left: 10px; */
+    width: 15%;
+    height: 50%;
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    left: 45%;
+    bottom: 0;
   }
   .nav-link{
     margin-left: 30px;
+  }
+  .navbar-nav{
+    margin-top: 10px;
   }
   .nav-close{
     width: 30px;
@@ -88,12 +99,67 @@ header.sticky {
     opacity: 1;
   }
 
-  @media (max-width: 1023px){
+  .logo-mobile{
+    display: none;
+    width: 50px;
+  }
+  .logo-mobile-2{
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .user{
+    display: none;
+    font-size: 18px;
+    max-width: 100%;
+    float: right;
+    margin-right: 10%;
+    margin-top: -13%;
+  }
+  /* tablet */
+  @media (min-width:768px) and (max-width:1023px) {
+    .nav-btn{
+      display: block;
+      font-size: 50px;
+      margin-top: -30px;
+      margin-bottom: 60px;
+    }
+    .nav-pc{
+      display: none;
+    }
+    .logo-mobile{
+      display: block;
+      height: 50px;
+    }
+    .carousel-caption,.carousel-control-prev,
+    .carousel-control-next,.carousel-indicators{
+      display: none;
+    }
+    .user{
+      display: block;
+      font-size: 30px;
+      margin-top: -95px;
+      margin-right: 10px;
+    }
+  }
+  
+
+  /* mobile */
+  @media (max-width: 767px){
     .nav-btn{
       display: block;
     }
     .nav-pc{
       display: none;
+    }
+    .logo-mobile{
+      display: block;
+    }
+    .carousel-caption,.carousel-control-prev,
+    .carousel-control-next,.carousel-indicators{
+      display: none;
+    }
+    .user{
+      display: block;
     }
   }
   

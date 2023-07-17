@@ -16,6 +16,7 @@
 }
 .text-catalogies {
   margin-bottom: 15px;
+  text-align: center;
 }
 .btn-catalogies {
   text-align: center;
@@ -25,8 +26,8 @@
   border-radius: 10px;
   margin-bottom: 15px;
 }
-.btn-1 {
-}
+/* .btn-1 {
+} */
 .btn-2 {
   margin-left: 25px;
 }
@@ -50,17 +51,6 @@ margin-bottom: 15px;
 background-color: #f2a0c4;
 color: white;
 }
-@media (max-width: 1200px) {
-.btn-catalogies {
-  width: 80px;
-}
-}
-@media (min-width: 1201px) and (max-width: 1366px) {
-.btn-catalogies {
-  width: 120px;
-}
-}
-
 /* Products */
 .products {
   margin-top: 20px;
@@ -180,17 +170,11 @@ margin-left: 10px;
 color: blue;
 }
 
-@media (max-width: 1555px) {
-.products-item .btn-add {
-  padding: 10px 5px ;
-  font-size: 10px; 
-}
-.products-item .btn-add {
-  font-size: 10px;
-}
-}
-/* mobile */
-@media (max-width: 767px){
+/* tablet */
+@media (min-width:768px) and (max-width:1023px) {
+  .filter{
+    padding-left: 0px;
+  }
   .products-item{
     width: 50%;
     margin-right: 0px ;
@@ -199,6 +183,64 @@ color: blue;
   .btn span{
     display: none;
   }
+  .catalogies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-catalogies{
+    width: 40%;
+  }
+  .brands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-brand{
+    width: 40%;
+    margin: 10px;
+  }
+}
+/* mobile */
+@media (max-width: 767px){
+  .text-title{
+    padding: 0px;
+  }
+  .products-item{
+    width: 50%;
+    margin-right: 0px ;
+    padding: 20px;
+  }
+  .btn span{
+    display: none;
+  }
+  .catalogies{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    justify-content: center;
+  }
+  .btn-catalogies{
+    width: 34%;
+  }
+  .brands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-brand{
+    width: 30%;
+    margin: 10px;
+  }
+  .name-product{
+    white-space: nowrap;
+  }
+  .btn-add,.btn-compare{
+    width: 50px;
+  }
+
 }
 
 /* Show cart */
@@ -397,7 +439,7 @@ cursor: pointer;
 .maintablecompare {
   background-color: white;
   position: fixed;
-  top: -100%;
+  top: -150%;
   z-index: 32;
   width: 1000px;
   padding: 10px;
