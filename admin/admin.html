@@ -16,117 +16,252 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body ng-app="admin" ng-controller="adminCtrl">
-    <div class="container">
-       <div class="nav">
-            <h1>Hello Admin</h1>
-            <p>Please select function</p>
-            <ul>
-                <li ng-click="showProduct()"><a href="">Product Management</a></li>
-                <li><a href="">Order management</a></li>
-                <li><a href="">User list</a></li>
-            </ul>
-       </div>
-    </div>
-    <hr>
-     <!-- Edit Product Form -->
-    <div class="edit-form container" ng-class="{ 'active': editProduct }">
-      <div class="row justify-content-center">
-        <div class="col-md-5" ng-if="editProduct">
-          <h2 class="text-center" style="margin-top: 20px;">Edit Product</h2>
-          <form>
-            <div class="form-group">
-              <label>ID:</label>
-              <input type="text" class="form-control" ng-model="editProduct.id" disabled>
-            </div>
-            <div class="form-group">
-              <label for="img">Img:</label>
-              <input type="file" name="img" id="img" class="form-control" ng-model="editProduct.newImage" accept="image/*">
-            </div>
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" id="name" class="form-control" ng-model="editProduct.name">
-            </div>
-            <div class="form-group">
-              <label for="price">Price:</label>
-              <input type="text" id="price" class="form-control" ng-model="editProduct.price">
-            </div>
-            <div class="form-group">
-              <label for="categories">Categories:</label>
-              <input type="text" id="categories" class="form-control" ng-model="editProduct.categories">
-            </div>
-            <div class="form-group">
-              <label for="brand">Brand:</label>
-              <input type="text" id="brand" class="form-control" ng-model="editProduct.brand">
-            </div>
-            <div class="form-group">
-              <label for="size">Size:</label>
-              <input type="text" id="size" class="form-control" ng-model="editProduct.size">
-            </div>
-            <div class="form-group">
-              <label for="color">Color:</label>
-              <input type="text" id="color" class="form-control" ng-model="editProduct.color">
-            </div>
-            <div class="form-group">
-              <label for="quantity">Quantity:</label>
-              <input type="text" id="quantity" class="form-control" ng-model="editProduct.quantity">
-            </div>
-            <div class="form-group">
-              <label for="sold">Sold:</label>
-              <input type="text" id="sold" class="form-control" ng-model="editProduct.sold">
-            </div>
-            <div class="form-group">
-              <button class="btn btn-success" ng-click="saveEdit()">Save</button>
-              <button class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
-            </div>
-          </form>
+<body ng-app="myApp" ng-controller="myController">
+  <div >
+      <div class="container">
+        <div class="nav">
+             <h1>Hello Admin</h1>
+             <p>Please select function</p>
+             <ul>
+                 <li ng-click="showProduct()"><a href="">Product Management</a></li>
+                 <li ng-click="showTheOrder()"><a href="">Order management</a></li>
+                 <li><a href="/T2302M_G3/index.html">Home</a></li>
+             </ul>
         </div>
       </div>
-    </div>
-    <div class="overlay" ng-class="{ 'active': editProduct }"></div>
-    <div id="ProductManagement" ng-show="tableProduct">
-        <h2 class="text-center">Product Management</h2>
+     <hr>
+      <!-- Edit Product Form -->
+     <div class="edit-form container" ng-class="{ 'active': editProduct }">
+       <div class="row justify-content-center">
+         <div class="col-md-5" ng-if="editProduct">
+           <a ng-click="closeEdit()" class="d-flex justify-content-end" style="margin-top: 20px; cursor: pointer; text-decoration: dashed;">
+             <i class="icon-close fa-solid fa-xmark fa-xl"></i>
+           </a>
+           <h2 class="text-center" style="margin-top: 20px;">Edit Product</h2>          
+           <form>
+             <div class="form-group">
+               <label>ID:</label>
+               <input type="text" class="form-control" ng-model="editProduct.id" disabled>
+             </div>
+             <div class="form-group">
+               <label for="img">Img:</label>
+               <input type="text" name="img" id="img" class="form-control" ng-model="editProduct.img1">
+             </div>
+             <div class="form-group">
+               <label for="name">Name:</label>
+               <input type="text" id="name" class="form-control" ng-model="editProduct.name">
+             </div>
+             <div class="form-group">
+               <label for="price">Price:</label>
+               <input type="text" id="price" class="form-control" ng-model="editProduct.price">
+             </div>
+             <div class="form-group">
+               <label for="categories">Categories:</label>
+               <input type="text" id="categories" class="form-control" ng-model="editProduct.categories">
+             </div>
+             <div class="form-group">
+               <label for="brand">Brand:</label>
+               <input type="text" id="brand" class="form-control" ng-model="editProduct.brand">
+             </div>
+             <div class="form-group">
+               <label for="size">Size:</label>
+               <input type="text" id="size" class="form-control" ng-model="editProduct.size">
+             </div>
+             <div class="form-group">
+               <label for="color">Color:</label>
+               <input type="text" id="color" class="form-control" ng-model="editProduct.color">
+             </div>
+             <div class="form-group">
+               <label for="quantity">Quantity:</label>
+               <input type="text" id="quantity" class="form-control" ng-model="editProduct.quantity">
+             </div>
+             <div class="form-group">
+               <label for="sold">Sold:</label>
+               <input type="text" id="sold" class="form-control" ng-model="editProduct.sold">
+             </div>
+             <div class="form-group">
+               <button class="btn btn-success" ng-click="saveEdit()">Save</button>
+               <button class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+     <div class="overlay" ng-class="{ 'active': editProduct }" ng-click="closeEdit()"></div>
+ 
+     <!-- Add Product Form -->
+     <div class="add-form container" ng-class="{ 'active': newProduct }">
+       <div class="row justify-content-center">
+         <div class="col-md-5" ng-if="newProduct">
+           <a ng-click="closeAdd()" class="d-flex justify-content-end" style="margin-top: 20px; cursor: pointer; text-decoration: dashed;">
+             <i class="icon-close fa-solid fa-xmark fa-xl"></i>
+           </a>
+           <h2 class="text-center" style="margin-top: 20px;">Add Product</h2>          
+           <form>
+             <!-- <div class="form-group">
+               <label for="id">ID:</label>
+               <input id="id" type="text" class="form-control" ng-model="newProduct.id">
+             </div> -->
+             <div class="form-group">
+               <label for="imgAdd">Img:</label>
+               <input type="text" name="img" id="imgAdd" class="form-control" ng-model="newProduct.img1">
+             </div>
+             <div class="form-group">
+               <label for="nameAdd">Name:</label>
+               <input type="text" id="nameAdd" class="form-control" ng-model="newProduct.name">
+             </div>
+             <div class="form-group">
+               <label for="priceAdd">Price:</label>
+               <input type="text" id="priceAdd" class="form-control" ng-model="newProduct.price">
+             </div>
+             <div class="form-group">
+               <label for="categoriesAdd">Categories:</label>
+               <input type="text" id="categoriesAdd" class="form-control" ng-model="newProduct.categories">
+             </div>
+             <div class="form-group">
+               <label for="brandAdd">Brand:</label>
+               <input type="text" id="brandAdd" class="form-control" ng-model="newProduct.brand">
+             </div>
+             <div class="form-group">
+               <label for="sizeAdd">Size:</label>
+               <input type="text" id="sizeAdd" class="form-control" ng-model="newProduct.size">
+             </div>
+             <div class="form-group">
+               <label for="colorAdd">Color:</label>
+               <input type="text" id="colorAdd" class="form-control" ng-model="newProduct.color">
+             </div>
+             <div class="form-group">
+               <label for="quantityAdd">Quantity:</label>
+               <input type="text" id="quantityAdd" class="form-control" ng-model="newProduct.quantity">
+             </div>
+             <div class="form-group">
+               <label for="soldAdd">Sold:</label>
+               <input type="text" id="soldAdd" class="form-control" ng-model="newProduct.sold">
+             </div>
+             <div class="form-group">
+               <button class="btn btn-success" ng-click="saveAdd()">Save</button>
+               <button class="btn btn-danger" ng-click="cancelAdd()">Cancel</button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+     <div class="overlay" ng-class="{ 'active': newProduct }" ng-click="closeAdd()"></div>
+     <!-- Table Product -->
+     <div id="ProductManagement" ng-show="tableProduct">
+         <h2 class="text-center">Product Management</h2>
+         <div class="container">
+           <table class="table table-bordered">
+             <thead class="thead-light">
+               <tr>
+                 <th>Id</th>
+                 <th>Img</th>
+                 <th>Name</th>
+                 <th>Price</th>
+                 <th>Categories</th>
+                 <th>Brand</th>
+                 <th>Size</th>
+                 <th>Color</th>
+                 <th>Quantity</th>
+                 <th>Sold</th>
+                 <th>Action</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr ng-repeat="product in products">
+                 <td>{{ product.id}}</td>
+                 <td><img ng-src=".{{ product.img1}}" alt=""></td>
+                 <td>{{ product.name}}</td>
+                 <td>${{ product.price}}</td>
+                 <td>{{ product.categories}}</td>
+                 <td>{{ product.brand}}</td>
+                 <td>{{ product.size}}</td>
+                 <td>{{ product.color}}</td>
+                 <td>{{ product.quantity}}</td>
+                 <td>{{ product.sold}}</td>
+                 <td class="btn-action">
+                     <button ng-click="add()" class="btn btn-primary">Add</button>
+                     <button ng-click="edit(product)" class="btn btn-success">Edit</button>
+                     <button ng-click="delete(product.id)" class="btn btn-danger">Delete</button>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+     </div>
+  </div>
+    
+    <!-- Order management -->
+    <div>
+      <div class="order-details" ng-show="showOrder">
         <div class="container">
-          <table class="table table-bordered">
-            <thead class="thead-light">
-              <tr>
-                <th>Id</th>
-                <th>Img</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Categories</th>
-                <th>Brand</th>
-                <th>Size</th>
-                <th>Color</th>
-                <th>Quantity</th>
-                <th>Sold</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="product in products">
-                <td>{{ product.id}}</td>
-                <td><img ng-src=".{{ product.img1}}" alt=""></td>
-                <td>{{ product.name}}</td>
-                <td>${{ product.price}}</td>
-                <td>{{ product.categories}}</td>
-                <td>{{ product.brand}}</td>
-                <td>{{ product.size}}</td>
-                <td>{{ product.color}}</td>
-                <td>{{ product.quantity}}</td>
-                <td>{{ product.sold}}</td>
-                <td class="btn-action">
-                    <button class="btn btn-primary">Add</button>
-                    <button ng-click="edit(product)" class="btn btn-success">Edit</button>
-                    <button ng-click="delete(product.id)" class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="customer">
+            <h2 class="text-center" style="margin-top: 10px;">The order</h2>         
+            <hr>  
+              <div class="row" ng-repeat="customer in customers">
+                <div class="customer-infor col-md-2">
+                  <p>Order id</p>
+                  <p>Customer name:</p>
+                  <p>Email:</p>
+                  <p>Address</p>
+                  <p>Country/Region:</p>
+                  <p>City:</p>
+                  <p>State:</p>
+                  <p>ZIP Code:</p>
+                  <p>Phone number:</p>
+                  <p>Note:</p>
+                </div>
+                <div class="col-md-10" >
+                  <p> {{ customer.id }} </p>
+                  <p>{{ customer.firstname }}  {{ customer.lastname }}</p>
+                  <p> {{ customer.email }} </p>
+                  <p> {{ customer.address }} </p>
+                  <p> {{ customer.country }} </p>
+                  <p> {{ customer.city }} </p>
+                  <p> {{ customer.state }} </p>
+                  <p> {{ customer.zipcode }} </p>
+                  <p> {{ customer.phone }} </p>
+                  <p> {{ customer.note }} </p>                  
+                </div>
+              </div>
+          </div>
+          <hr>
+          <div class="order">
+            <h2 class="text-center" style="margin-top: 10px;">List of items</h2>
+            <table class="table table-bordered">
+              <thead class="thead-light">
+                <tr>
+                  <th>Id</th>
+                  <th>Feature</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Sub Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in cartItems">
+                  <td>{{ item.id}}</td>
+                  <td><img ng-src=".{{ item.img1}}" alt=""></td>
+                  <td>{{ item.name}}</td>
+                  <td>${{ item.price}}</td>
+                  <td>{{ item.quantity}}</td>
+                  <td>${{ calculateSubTotal(item) | number: 2 }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 class="text-right">Total price: ${{ totalPrice | number: 2 }}</h4>
+          </div>
         </div>
+      </div>
+
+
     </div>
-   
     <!-- Script -->
-    <script src="./admin.js"></script>
+    
+    <script src="/T2302M_G3/js/app.js"></script>
+    <script src="/T2302M_G3/js/appProducts.js"></script>
+    <!-- <script src="./admin.js"></script> -->
+
 </body>
 </html>

@@ -124,21 +124,36 @@ form.addEventListener('submit', function (e) {
 const login_Form = document.getElementById('login-form');
 const user_Name = document.getElementById('user-name');
 const user_Password = document.getElementById('user-password');
+// Kiểm tra tài khoản admin
+function checkAdmin(username, password) {
+	return username === 'admin' && password === '123456';
+  }
 // check account
 function loginUser(username, password) {
 	const storedUsers = JSON.parse(localStorage.getItem('registeredUsers'));
   
-	if (storedUsers) {
-	  const foundUser = storedUsers.find(user => user.username === username && user.password === password);
-	  if (foundUser) {
-		showSuccess(user_Password, 'Login Success ! Go to home page in 1 seconds !');
+	// if (storedUsers) {
+	//   const foundUser = storedUsers.find(user => user.username === username && user.password === password);
+	//   if (foundUser) {
+	// 	showSuccess(user_Password, 'Login Success ! Go to home page in 1 seconds !');
+	// 	setTimeout(function(){
+	// 		location.href = '/T2302M_G3/index.html';
+	// 	},1000);
+	//   } else {
+	// 	showError(user_Password, 'User Name or Password is incorrect !');
+	//   }
+	// }
+	if (checkAdmin(username, password)) {
+		showSuccess(user_Password, 'Login Success as Admin! Redirecting to admin page in 1 second!');
 		setTimeout(function(){
-			location.href = '/T2302M_G3/index.html';
-		},1000);
+		  location.href = '/T2302M_G3/admin/admin.html';
+		}, 1000);
 	  } else {
-		showError(user_Password, 'User Name or Password is incorrect !');
+		showSuccess(user_Password, 'Login Success! Redirecting to home page in 1 second!');
+		setTimeout(function(){
+		  location.href = '/T2302M_G3/index.html';
+		}, 1000);
 	  }
-	}
   }
   
 // Event listeners

@@ -144,7 +144,7 @@
                             <button class="btn-upDown" ng-click="upquantity(item)">+</button>
                         </td>
                         <td>${{ calculateSubTotal(item) | number: 2 }}</td>
-                        <td><button class="btn-delete" ng-click="delete(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
+                        <td><button class="btn-delete" ng-click="deleteCartItems(item.id)"><i class="fa-solid fa-trash fa-xl"></i></button></td>
                     </tr>
                 </tbody>
             </table>

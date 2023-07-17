@@ -34,7 +34,7 @@ app.directive('slickSlider', function() {
   };
 })
 .controller('myController', function($scope, $http, $window, $routeParams) {
-    $http.get('products.json')
+    $http.get('/T2302M_G3/products.json')
       .then(function(response) {
         $scope.products = response.data;
         $scope.id = $routeParams.id;
@@ -144,8 +144,10 @@ app.directive('slickSlider', function() {
       sessionStorage.setItem('cartItems',angular.toJson($scope.cartItems))
       sessionStorage.setItem('count',angular.toJson($scope.count))
       console.log($scope.cartItems)
+     
       $scope.calculateTotalPrice();
       console.log($scope.totalPrice);
+
     }
 
     // Show cart
@@ -159,7 +161,7 @@ app.directive('slickSlider', function() {
     };
    
     // Delete product
-    $scope.delete = function(id) {
+    $scope.deleteCartItems = function(id) {
       for (var i = 0; i < $scope.cartItems.length; i++) {
         if ($scope.cartItems[i].id === id) {
           $scope.cartItems.splice(i, 1);
@@ -286,15 +288,88 @@ app.directive('slickSlider', function() {
   if (sessionStorage.getItem('customers')) {
     $scope.customers = angular.fromJson(sessionStorage.getItem('customers'));
   }
-  var uid = 1;
+  var cid = 1;
   $scope.addCustomers = function() {
     if ($scope.customer.id == null) {
-      $scope.customer.id = uid++;
+      $scope.customer.id = cid++;
       $scope.customers.push($scope.customer)
     }
     console.log($scope.customers);
     sessionStorage.setItem('customers',angular.toJson($scope.customers))
   }
-  $scope.admin = 'asd';
+  
+  // Admin
+  $scope.tableProduct = false;
+  $scope.showProduct = function() {
+    $scope.tableProduct = !$scope.tableProduct;
+  }
+  $scope.closeEdit = function() {
+      $scope.editProduct = false;
+  }
+  // Delete
+  $scope.delete = function(id) {
+      for (i in $scope.products) {
+          if ($scope.products[i].id == id) {
+              $scope.products.splice(i,1);     
+              break;          
+          }
+      }
+  }
+  // Edit
+  $scope.edit = function(product) {
+      $scope.editProduct  = angular.copy(product)          
+  }
+  $scope.saveEdit = function() {
+      var newEditProduct = {
+          id: $scope.editProduct.id,
+          img1: $scope.editProduct.img1,
+          name: $scope.editProduct.name,
+          price: $scope.editProduct.price,
+          categories: $scope.editProduct.categories,
+          brand: $scope.editProduct.brand,
+          size: $scope.editProduct.size,
+          color: $scope.editProduct.color,
+          quantity: $scope.editProduct.quantity,
+          sold: $scope.editProduct.sold
+      };
+      var index = $scope.products.findIndex(function(product) {
+          return product.id === newEditProduct.id;
+      })
+      if (index !== -1) {
+          $scope.products[index] = newEditProduct;
+      }
+  }
+  $scope.cancelEdit = function() {
+      $scope.editProduct = null;
+    }
+  
+  // Add  
+  $scope.add = function() {
+      $scope.newProduct = {};
+  }
+  $scope.closeAdd = function() {
+      $scope.newProduct = null;
+  }
+  var uid = 43;
+  $scope.saveAdd = function() {
+      if ($scope.newProduct.id == null)
+          $scope.newProduct.id = uid++;
+          $scope.products.push(angular.copy($scope.newProduct));
+      console.log($scope.newProduct.id)
+  };
+  $scope.cancelAdd = function() { 
+      $scope.newProduct = null;
+  }
+
+ // Show The order
+$scope.showOrder = false;
+$scope.showTheOrder = function() {
+  $scope.showOrder = !$scope.showOrder;
+}
+
+
 });
+
+
+
 
