@@ -46,6 +46,7 @@ height: 50px;
 border: 1px solid pink;
 border-radius: 15px;
 margin-bottom: 15px;
+margin-left: 35px;
 }
 .btn-brand:hover {
 background-color: #f2a0c4;
@@ -199,6 +200,7 @@ color: blue;
   .btn-brand{
     width: 40%;
     margin: 10px;
+   
   }
 }
 /* mobile */
@@ -258,6 +260,8 @@ transform: translate(0, -50%);
 background-color: #fff;
 border-radius: 5px;
 z-index: 999;
+max-width: 100%;
+max-height: 100%;
 }
 .showcart.active {
 right: 0;
@@ -293,6 +297,7 @@ font-size: 24px;
 }
 .showcart table {
 width: 100%;
+max-width: 100%;
 }
 .buy-amount input {
 width: 40px;
