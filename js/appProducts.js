@@ -4,7 +4,7 @@ app.directive('slickSlider', function() {
     link: function(scope, element, attrs) {
       $(element).slick({
         slidesToShow: 4,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         isFinite: true,
         arrows: true,
         autoplay: true,
