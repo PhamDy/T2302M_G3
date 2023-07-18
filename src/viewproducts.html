@@ -35,7 +35,7 @@
             <div class="icon-header">
                 <form action="">
                     <div class="input-group" >
-                        <input type="text" class="form-control" placeholder="Search for anything" id="search" name="search">
+                        <input type="text" class="form-control" placeholder="Search for anything" id="search" name="search" ng-model="product.name">
                         <div class="input-group-append">
                           <span class="input-group-text icon-search "><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
                         </div>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-9" style="padding: 0;">
                     <div class="products">
-                        <div class="products-item" ng-repeat="product in products | filter:search" 
+                        <div class="products-item" ng-repeat="product in products | filter:product" 
                             ng-if="matchCategory(product) && matchBrand(product)">
                             <div class="img-products">
                                 <a href="">
