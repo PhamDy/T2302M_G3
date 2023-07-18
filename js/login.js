@@ -96,7 +96,7 @@ $scope.register = function() {
           // Đăng nhập thành công với các tài khoản khác
           alert('Login Successful!');
           $scope.logForm.$setPristine(); // Đặt lại form về trạng thái ban đầu
-          location.href = '/T2302M_G3/src/index.html'; // Chuyển hướng đến trang "1.html"
+          location.href = '/T2302M_G3/index.html'; // Chuyển hướng đến trang "1.html"
         }
       } else {
         alert('Invalid username or password!');
