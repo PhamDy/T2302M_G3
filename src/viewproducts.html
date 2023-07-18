@@ -1,3 +1,4 @@
+<!-- header -->
 <header>
     <div class="logo-mobile">
         <a href="#">
@@ -58,18 +59,19 @@
 
     <label for="nav-mobile-input" class="nav-overlay"></label>
 
-    <div class="user">
-        <a href="/T2302M_G3/src/login.html">
-            <i class="fa-solid fa-user fa-xl" style="color: rgb(30, 48, 80);"></i>
-        </a>
-    </div>
+    <a ng-click="showcart()" class="text-dark cart-mobile" >
+        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+        <div class="count-cart">
+            <p class="count-cart-sup" ng-show="count > 0">{{ count }} </p>
+        </div>
+    </a>
     <nav class="nav-mobile">
         <label for="nav-mobile-input" class="nav-close"><i class="fa-regular fa-circle-xmark"></i></label>
-        <!-- <div class="logo">
+        <div class="logo">
             <a href="#">
                 <img src="./image/logo.png" class="logo-mobile-2">
             </a>
-        </div> -->
+        </div>
             <ul class="navbar-nav">
                 <li> 
                     <a href="#" class="nav-link">Home</a>
