@@ -46,6 +46,7 @@ height: 50px;
 border: 1px solid pink;
 border-radius: 15px;
 margin-bottom: 15px;
+margin-left: 35px;
 }
 .btn-brand:hover {
 background-color: #f2a0c4;
@@ -199,6 +200,7 @@ color: blue;
   .btn-brand{
     width: 40%;
     margin: 10px;
+   
   }
 }
 /* mobile */
