@@ -97,6 +97,7 @@ small {
 	top: 100%;
 	margin-top: 3px;
 	color: #e74c3c;
+	width: 100px;
 }
 
 .form-control span::before {
